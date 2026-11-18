@@ -28,4 +28,11 @@ One entry per decision: what was decided and why. Newest at the bottom. Agents m
 | 2026-11-18 | English UI via i18n layer from day one; Ukrainian possible later | Cheap now, expensive to retrofit. |
 | 2026-11-18 | Light/dark mode and system font scaling from M1 | Cheap now, expensive to retrofit. |
 | 2026-11-18 | Crash reporting: undecided for v1 (decide in M6) | Affects privacy policy. |
+| 2026-11-18 | Data source: Wiktionary via kaikki.org (CC BY-SA 4.0); `verbs.json` offered under CC BY-SA 4.0, app code separate | Commercial use allowed; 42/42 spot-check accuracy; ~8,900 verbs with full tables. See `docs/data-source.md`. |
+| 2026-11-18 | Jehle database not shipped | Confirmed CC BY-NC-SA 3.0 (non-commercial). |
+| 2026-11-18 | Verb list and short translations are curated, committed files (auto-drafted, human-reviewed) | Frequency ranking from subtitles is biased (vulgar, noun-like participles); Wiktionary first glosses are sometimes poor labels. |
+| 2026-11-18 | Two-stage data build: rare network `fetch` → committed snapshot; offline deterministic `build` in CI | 749 MB dump shouldn't be in the repo or needed for every build; Wiktionary changes over time. |
+| 2026-11-18 | Reflexive verbs and compound tenses derived in the build script (pronoun + form; haber + participle) | Data has reflexive verbs inconsistently and no compound forms; both derivations are mechanical and testable. |
+| 2026-11-18 | Imperfect subjunctive: one tense with -ra and -se as accepted alternatives | Both are correct Spanish. |
+| 2026-11-18 | vos forms excluded for now | Not in scope; data has them tagged, so a "voseo" option is possible later. |
 | 2026-11-18 | Repo set up for agents: `npm run check`, lint-enforced architecture rules, Expo web + Playwright screenshots, CI, branch + PR per milestone | Agents can verify their own work; mistakes caught automatically. |

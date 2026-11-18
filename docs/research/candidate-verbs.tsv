@@ -1,0 +1,403 @@
+# Candidate verb ranking (method B: infinitive + gerund + participle frequency).
+# NOT final: needs human review (see docs/data-source.md). Sources: Wiktionary via kaikki.org (CC BY-SA 4.0); FrequencyWords es_50k (CC BY-SA 4.0).
+rank	infinitive	first_wiktionary_gloss	flags
+1	hacer	to do, perform, execute, carry out	
+2	ser	to be (essentially or identified as)	
+3	decir	to say, to tell, to name, to mention	
+4	ver	to see, to spot	
+5	estar	to be (have a temporary or permanent location in space)	
+6	ir	to go (away from speaker and listener)	
+7	hablar	to talk; to speak; to communicate using words	
+8	tener	to have; to possess	
+9	pasar	to pass, to hand, to slip	
+10	haber	to have; forms the perfect aspect	
+11	morir	to die (to stop living)	
+12	pensar	to think, ponder	
+13	saber	to know, to understand (a fact)	
+14	salir	to go out, to leave, to depart, to head out	
+15	volver	to return, to revert, to get back	
+16	venir	Senses relating to literal movement.	
+17	dar	to give, to give out	
+18	dejar	to leave (to place)	
+19	encontrar	to meet	
+20	trabajar	to work	
+21	llegar	to arrive, get (to)	
+22	esperar	to hope	
+23	tomar	to take (put under one's physical or mental control, often in one's hands)	
+24	buscar	to seek, search for, look for, try to find, to scour	
+25	llamar	to summon, to call	
+26	suponer	to suppose, to surmise, to assume, to guess, to imagine, to figure, to say, to t	
+27	poner	to put, to place (cause to assume a specified position)	
+28	poder	to be able to, can	
+29	perder	to lose	
+30	cuidar	to look after, take care of (e.g. a house, a person)	
+31	sentir	to feel	
+32	vivir	to live; to be alive	
+33	matar	to kill, slay	
+34	entrar	to enter; to come in; to get in; to go in; to get inside; to come on in	
+35	comer	to eat	
+36	oír	to hear	
+37	dormir	to sleep	
+38	seguir	to follow	
+39	tratar	to treat (to handle, behave toward in a specific way)	
+40	cambiar	to change, to shift, to switch, to alter	
+41	usar	to use	
+42	jugar	to play	
+43	llevar	to take somewhere	
+44	conseguir	to achieve, succeed in, reach, accomplish, attain	
+45	creer	to believe	
+46	terminar	to (cause to) finish, to (cause to) end, to (cause to) terminate, to (cause to) 	
+47	ayudar	to help	
+48	empezar	to start, begin, to get started	
+49	querer	to desire, to want, to want to	
+50	intentar	to try, to attempt; especially: to strain or put forth effort in so doing	
+51	pagar	to pay	
+52	ganar	to gain	
+53	entender	to understand, to fathom	
+54	escuchar	to listen to, to hear out	
+55	mirar	to look at (to try to see, to pay attention to with one’s eyes)	
+56	conocer	to know (a person or a place), to be familiar with, to be acquainted with	
+57	pedir	to ask for something	
+58	maldecir	to damn, to curse	
+59	divertir	to entertain	
+60	escribir	to write (to form letters, words or symbols on a surface in order to communicate	
+61	comprar	to buy (to obtain in exchange of money or goods)	
+62	partir	to divide, split	
+63	traer	to bring (in the sense of transport, for differences with llevar and examples se	
+64	leer	to read	
+65	acabar	to finish; to end	
+66	quedar	to be (as a result of something), to end up	
+67	joder	to annoy, bug, bother, irritate	vulgar
+68	beber	to drink	
+69	contar	to count; to tally	
+70	abrir	to open, open up	
+71	sacar	to put out, to get out (e.g. a public statement, an APB, a release of media or e	
+72	correr	to run, to jog	
+73	abogar	to advocate	
+74	deber	to owe	
+75	mantener	to keep	
+76	preguntar	to ask	
+77	salvar	to save	
+78	parecer	to seem, to see fit	
+79	preparar	to prepare	
+80	aprender	to learn (to acquire, or attempt to acquire knowledge or an ability to do someth	
+81	tocar	to touch	
+82	recibir	to receive, get	
+83	placer	to like (something or someone)	
+84	caer	to fall (to move to a lower position due to gravity)	
+85	parar	to stop, halt	
+86	regresar	to return, go back, come back	
+87	romper	to break	
+88	robar	to rob	
+89	olvidar	to forget	
+90	vestir	to dress, to clothe, to attire	
+91	probar	to prove	
+92	cerrar	to close, to shut	
+93	enviar	to send	
+94	vender	to sell	
+95	casar	to marry, wed someone to (unite two others in wedlock)	
+96	bailar	to dance	
+97	llorar	to cry, to weep	
+98	caminar	to walk	
+99	mentir	to lie (say something untrue)	
+100	decidir	to decide, to make up one's mind, to determine, to choose to	
+101	cenar	to dine; to have supper; to have a lavish meal	
+102	luchar	to fight, to battle, to do battle	
+103	meter	to put in, insert	
+104	volar	to fly, to fly away	
+105	pesar	to weigh (to determine the weight of an object)	
+106	escapar	to escape, get out	
+107	ocupar	to occupy (to take or use space)	
+108	subir	to go up or come up	
+109	coger	to take, catch, hold, to get, to seize	
+110	confiar	to reassure	
+111	echar	to throw, toss, cast, jettison (to release an object from one's grasp so that it	
+112	suceder	to happen, to befall, to occur	
+113	arreglar	to fix, to repair, to mend	
+114	equivocar	to mistake, mix up	
+115	aponer	to appose	
+116	ocurrir	to happen, to occur	
+117	elegir	to choose	
+118	funcionar	to work, to function	
+119	bajar	to go down, come down	
+120	evitar	to avoid, to bypass, to evade, to circumvent, to dodge, to shun, to eschew (to s	
+121	desaparecer	to disappear, to go missing, to vanish, to be gone	
+122	descubrir	to discover	
+123	cantar	to sing	
+124	disparar	to shoot, to fire (e.g. a weapon, a rocket)	
+125	pelear	to fight (to contend in physical conflict)	
+126	actuar	to act, to behave	
+127	recordar	to remember, to recollect	
+128	bromear	to joke, to kid (to do or say something for amusement)	
+129	crear	to create	
+130	conducir	to drive; to conduct	
+131	comenzar	to begin, to commence	
+132	proteger	to protect, to defend	
+133	aceptar	to accept, to take up, to take up on	
+134	detener	to detain	
+135	andar	to walk, to go	
+136	preocupar	to worry, to concern, to trouble, to be worrisome to, to preoccupy	
+137	encantar	to charm, to enchant	
+138	tirar	to drop intentionally	
+139	sentar	to seat	
+140	herir	to wound, injure (cause physical injury and pain)	
+141	averiguar	to find out, figure out, work out, determine	
+142	asesinar	to murder	
+143	cansar	to tire	
+144	obtener	to obtain	
+145	resolver	to resolve, sort out, settle, address, tackle, overcome, iron out	
+146	convertir	to turn into, to cause to become	
+147	destruir	to destroy	
+148	construir	to build	
+149	atrapar	to capture	
+150	soldar	to weld	
+151	limpiar	to clean	
+152	cortar	to cut	
+153	necesitar	to need	
+154	gritar	to shout, to scream, to cry out, to call out	
+155	asustar	to scare, to frighten, to spook	
+156	estudiar	to study	
+157	discutir	to discuss, to argue; to talk about	
+158	recuperar	to recover	
+159	huir	to flee, to run away	
+160	invitar	to invite	
+161	manejar	to handle	
+162	sufrir	to suffer (be confronted with something undesired)	
+163	cumplir	to fulfil, to fulfill, to meet, to deliver (e.g., requirements, prerequisites, p	
+164	crecer	to grow	
+165	amar	to love, have great affection for, care about	
+166	resultar	to result, to turn out, to end up, to prove	
+167	mover	to move (to cause to change place or posture)	
+168	jurar	to swear; to take an oath	
+169	pescar	to fish	
+170	enamorar	to enamor	
+171	considerar	to consider, to regard, to see, to look, to view	
+172	descansar	to rest, relax (be in a state of rest or inactivity)	
+173	permitir	to allow, permit	
+174	recoger	to collect, to gather, to pick up, to fetch, to retrieve (something previously l	
+175	investigar	to investigate, to research	
+176	mostrar	to show (have somebody see something)	
+177	explicar	to explain	
+178	abandonar	to abandon, to leave	
+179	imaginar	to imagine	
+180	controlar	to control, to rein in	
+181	esconder	to hide	
+182	golpear	to hit, to knock, to tap	
+183	sobrevivir	to survive	
+184	viajar	to travel, journey	
+185	cometer	to commit	
+186	revisar	to revise	
+187	compartir	to share	
+188	mercar	to buy	
+189	planear	to plan, to plot	
+190	responder	to answer, to reply	
+191	privar	to deprive	
+192	enseñar	to teach	
+193	lograr	to get, to obtain	
+194	gustar	translated as "to like", analyzable in structure as "to please" [with dative ‘so	
+195	servir	to serve (to be a servant or worker; to render service)	
+196	utilizar	to use; to make use of; to utilize	
+197	firmar	to sign	
+198	continuar	to continue, to carry on	
+199	cubrir	to cover	
+200	fumar	to smoke (give off smoke)	
+201	respirar	to breathe	
+202	atacar	to attack, to come at	
+203	cruzar	to cross (including of legs)	
+204	militar	to participate actively in a political organization, especially in the military	
+205	disponer	to prepare, arrange	
+206	engañar	to trick, to deceive, to hoodwink, to cheat	
+207	saltar	to jump	
+208	arruinar	to ruin	
+209	presentar	to present, to submit	
+210	disfrutar	to enjoy	
+211	acusar	to accuse, charge, indict	
+212	quitar	to remove, to take away, to take down, to take off, to pull off, to pull out, to	
+213	guardar	to save (to store for future use)	
+214	complicar	to complicate	
+215	causar	to cause, to make	
+216	molestar	to bother, to disturb, to trouble, to impose, to inconvenience, to burden	
+217	demostrar	to show, to demonstrate	
+218	helar	to freeze, to cool	
+219	mejorar	to make better, improve	
+220	levantar	to lift	
+221	soñar	to dream	
+222	nacer	to be born, to sprout, to begin to grow; to hatch (out)	
+223	aburrir	to bore; to tire	
+224	reír	to laugh	
+225	colgar	to hang	
+226	comprobar	to check, to check on, to check out, to see, to check to see (examine)	
+227	celebrar	to celebrate	
+228	mandar	to send	
+229	convencer	to convince	
+230	montar	to mount	
+231	despertar	to wake	
+232	visitar	to visit	
+233	cocinar	to cook	
+234	arrestar	to arrest	
+235	soportar	to bear, to endure, to withstand, put up with, tolerate, to stomach, to weather,	
+236	cargar	to load (to put a load on or in (a means of conveyance or a place of storage))	
+237	interesar	to interest	
+238	despedir	to dismiss	
+239	quemar	to burn	
+240	ofrecer	to offer, to offer up, to provide	
+241	entregar	to deliver, to hand over, to hand off	
+242	informar	to inform	
+243	juzgar	to judge, to adjudicate	
+244	vigilar	to watch over	
+245	enfadar	to anger, to make angry	
+246	fingir	to pretend (to act as though something is different from what it is)	
+247	aparecer	to appear, to turn up, to pop up, to come up	
+248	incluir	to include, to enclose, to contain	
+249	prometer	to promise	
+250	lavar	to wash	
+251	grabar	to record	
+252	sonar	to sound, to ring	
+253	permanecer	to stay, remain, stand	
+254	nadar	to swim (move through water)	
+255	mencionar	to mention	
+256	dirigir	to direct	
+257	ocultar	to hide, to conceal	
+258	renunciar	to renounce, to abandon, to give up, to relinquish, to do without	
+259	apagar	to extinguish (a flame, fire), to douse	
+260	prestar	to lend	
+261	admitir	to accept, to admit, to agree to, to concede	
+262	lanzar	to throw	
+263	observar	to observe, to eye	
+264	superar	to surpass, exceed	
+265	desear	to wish	
+266	comprender	to understand, to comprehend	
+267	organizar	to organize	
+268	alcanzar	to reach; to get to to catch up	
+269	armar	to arm (supply with weapons)	
+270	agradecer	to thank	
+271	devolver	to return, refund, restore, give back, hand back, bring back, send back etc.	
+272	vencer	to defeat, to win, to conquer	
+273	pecar	to sin	
+274	costar	to cost	
+275	adivinar	to guess	
+276	besar	to kiss	
+277	significar	to signify	
+278	eliminar	to eliminate	
+279	encender	to light, ignite	
+280	gastar	to spend (money, time, resources)	
+281	identificar	to identify, to pinpoint	
+282	contratar	to contract, to take on	
+283	marchar	to go, travel	
+284	pegar	to stick	
+285	practicar	to practice	
+286	liberar	to liberate, to release, to free, to set free, to free up	
+287	realizar	to carry out; to perform; to conduct; to implement (e.g. a change, a task, proje	
+288	notar	to note (make a written record of and/or purposefully commit to memory)	
+289	unir	to unite, join	
+290	avanzar	to advance (to make (something) happen at an earlier time or date)	
+291	contestar	to reply, retort, answer, respond	
+292	aguantar	to hold, withhold, hold back, retain (breath, urine)	
+293	reunir	to gather, to collect, to bring together, to assemble, to get together, to round	
+294	asegurar	to secure (to make fast; to close or confine effectually)	
+295	reconocer	to recognize	
+296	adecuar	to adapt, adjust	
+297	importar	to matter, to be important [with a ‘someone’] (often translated idiomatically wi	
+298	entrenar	to train	
+299	formar	to form, to create	
+300	encerrar	to lock up, to coop up	
+301	confirmar	to confirm	
+302	enterrar	to bury; to entomb	
+303	involucrar	to involve	
+304	cazar	to hunt	
+305	desgraciar	to disgrace	
+306	perseguir	to pursue, to chase, to go after	
+307	conectar	to connect, connect up, link	
+308	arriesgar	to venture; to risk; to hazard	
+309	pintar	to paint (to apply paint to)	
+310	amanecer	to dawn	
+311	fallar	to fail	
+312	sorprender	to surprise	
+313	defender	to defend, to protect, to hold down	
+314	sangrar	to bleed	
+315	hallar	to find something, deliberately or not	
+316	apostar	to bet	
+317	despejar	to clear, to remove	
+318	interrumpir	to interrupt, to barge in, to disrupt, to disturb, to intrude, to cut in, to bre	
+319	ordenar	to order, arrange	
+320	enterar	to inform	
+321	callar	to calm	
+322	criar	to rear or raise (e.g., a child)	
+323	explotar	to explode	
+324	lastimar	to injure	
+325	escoger	to choose, select, pick	
+326	obligar	to force, to compel, to make (someone do something)	
+327	condenar	to condemn	
+328	retirar	to remove	
+329	lidiar	to fight, battle	
+330	alejar	to remove to a distance, put farther away, to lead away, to draw away	
+331	encargar	to entrust	
+332	confundir	to confuse, to throw off, to baffle, to perplex	
+333	llenar	to fill something up	
+334	emplear	to hire, to employ (to give someone a job)	
+335	inventar	to invent	
+336	desconocer	to not be familiar with, to not know, to not recognize	
+337	asumir	to assume, take on	
+338	rezar	to pray, especially to repeat or recite (rather than sing) a memorized prayer su	
+339	almorzar	to eat lunch	
+340	registrar	to register, record	
+341	prohibir	to forbid, prohibit, enjoin	
+342	votar	to vote	
+343	establecer	to establish	
+344	marcar	to mark, to set	
+345	sonreír	to smile	
+346	separar	to separate, to detach (to disunite from a group or mass; to disconnect)	
+347	atender	to pay attention to (something); to attend to (something)	
+348	enfrentar	to confront, to face (can also be translated with deal with, tackle, etc.)	
+349	curar	to care, heed, study, strive, seek, work	
+350	avisar	to tell, tip off, notify, inform	
+351	pasear	to stroll, to saunter, to promenade	
+352	participar	to participate, to take part, to partake	
+353	vomitar	to vomit, to be sick	
+354	cancelar	to cancel, call off	
+355	capturar	to catch, trap, capture	
+356	colocar	to place	
+357	satisfacer	to satisfy, fulfil / fulfill	
+358	declarar	to declare; to state	
+359	nuclear	to join up; to unite	
+360	acostar	to lay	
+361	recorrer	to tour	
+362	impresionar	to impress; to make an impression on	
+363	rastrear	to track, pursue	
+364	girar	to turn, pivot	
+365	atravesar	to cross, to traverse	
+366	negociar	to negotiate	
+367	destrozar	to destroy, to break	
+368	contener	to contain	
+369	contactar	to contact, to reach out to	
+370	alimentar	to feed (give food to eat)	
+371	perdonar	to pardon, excuse, forgive	
+372	localizar	to find	
+373	apropiar	to give, bestow	
+374	filmar	to film, record	
+375	agarrar	to grab or take hold of	
+376	rechazar	to reject, to turn down, to turn away, to refuse, to dismiss, to shun, to declin	
+377	experimentar	to experiment	
+378	aumentar	to increase, grow	
+379	desayunar	to break a fast	
+380	acostumbrar	accustom, inure, familiarize	
+381	tardar	to take some amount of time	
+382	traducir	to translate (from one language into another)	
+383	ofender	to offend	
+384	reducir	to reduce, to lower, to cut, to scale back	
+385	atar	to tie, tie up, tie down, to tether (secure (something) by rope or the like)	
+386	desarrollar	to develop	
+387	determinar	to determine	
+388	provocar	to cause or provoke, to prompt	
+389	secuestrar	to kidnap, to abduct	
+390	confesar	to confess, to come clean about	
+391	pillar	to catch, get, to grab (e.g. grab a cab, get lunch, grab a drink, catch a movie)	
+392	borrar	to erase, to delete	
+393	amenazar	to threaten (“to make threats”)	
+394	traicionar	to betray, turn on	
+395	iniciar	to begin; to initiate	
+396	castigar	to punish, to castigate (to cause to suffer for crime or misconduct)	
+397	rodar	to roll, rotate	
+398	solar	to pave	
+399	existir	to exist	
+400	negar	to deny	
