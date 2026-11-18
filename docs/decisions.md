@@ -29,3 +29,9 @@ One entry per decision: what was decided and why. Newest at the bottom. Agents m
 | 2026-11-18 | Light/dark mode and system font scaling from M1 | Cheap now, expensive to retrofit. |
 | 2026-11-18 | Crash reporting: undecided for v1 (decide in M6) | Affects privacy policy. |
 | 2026-11-18 | Repo set up for agents: `npm run check`, lint-enforced architecture rules, Expo web + Playwright screenshots, CI, branch + PR per milestone | Agents can verify their own work; mistakes caught automatically. |
+| 2026-11-18 | Expo SDK 58, Node 24 (pinned in `.nvmrc` + `engines`) | Latest stable; Expo Go on the phone only runs the latest SDK. Node 24 is the current LTS. |
+| 2026-11-18 | Web export as a single-page app (`web.output: "single"`), not static rendering | Web is only used for automated UI checks. Static rendering pre-builds light-mode HTML, and in dark mode the styles broke while the page started up (caught in the M0 screenshots). |
+| 2026-11-18 | Expo companion packages installed with `npx expo install` (expo-constants, expo-linking, expo-font, expo-splash-screen, expo-status-bar, expo-system-ui) plus `test-renderer` | Required by Expo Router / the splash screen / Android dark mode, and `test-renderer` is a required peer of React Native Testing Library 14. Part of the §2 stack, not new libraries. |
+| 2026-11-18 | Zustand and AsyncStorage not installed until first used (M3) | Keep M0 minimal; both are already approved in §2. |
+| 2026-11-18 | Unit/component tests in `tests/`, browser tests in `e2e/` | Matches §3. |
+| 2026-11-18 | Prettier formats code and config, not Markdown; `npm run lint` also runs `prettier --check` | Prettier pads Markdown tables, so one-row doc edits would rewrite whole tables. The check makes CI catch unformatted code. |

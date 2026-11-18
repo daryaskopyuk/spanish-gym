@@ -1,0 +1,12 @@
+node_modules
+dist
+.expo
+coverage
+e2e/screenshots
+test-results
+playwright-report
+src/data/verbs.json
+package-lock.json
+
+# Hand-written docs: keep their formatting (Prettier pads tables, churning diffs)
+*.md

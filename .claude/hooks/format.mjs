@@ -12,7 +12,13 @@ try {
   const supported = /\.(ts|tsx|js|jsx|mjs|cjs|json|md|yml|yaml)$/;
   const generated = /src[\\/]data[\\/]verbs\.json$/;
 
-  if (file && supported.test(file) && !generated.test(file) && existsSync(file) && existsSync(prettier)) {
+  if (
+    file &&
+    supported.test(file) &&
+    !generated.test(file) &&
+    existsSync(file) &&
+    existsSync(prettier)
+  ) {
     spawnSync(prettier, ['--write', '--log-level', 'warn', file], { cwd: root, stdio: 'ignore' });
   }
 } catch {
