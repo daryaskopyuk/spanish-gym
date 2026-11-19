@@ -39,8 +39,8 @@ Legend: ⬜ not started · 🔄 in progress · ✅ done. Update this table at th
 | Reflexive verbs | Answer must include the reflexive pronoun: *levantarse · yo* → **me levanto**. |
 | Compound tenses | Included (e.g. *he hablado*). Multi-word answers are normal. |
 | Imperative | Wanted, but **not in the first iteration**. Data format must allow tenses with missing persons. |
-| Tenses | Start with *presente de indicativo*; then the order in M5. |
-| Tense selection | Chosen at the **start of each session** (tense chips above "Start"), not buried in Settings. One tense = focused practice; several = mix. Last selection is remembered. |
+| Tenses | *Presente*, *pretérito indefinido* (preterite) and *futuro simple* from M2; the rest in M5. |
+| Tense selection | Two levels (§7b). **My tenses**: which tenses the user is learning; picked on first launch (only Present preselected), changeable in Settings. **Session chips** on the home screen: which of my tenses to practise now (one = focused, several = mix); last selection remembered. |
 | Pronouns | All six persons stored in the data, including *vosotros*. Setting to hide *vosotros*. |
 | Accounts | None for now. Progress stored on the device, structured so accounts + cloud sync can be added later (this also solves progress loss on phone change). |
 | Look & accessibility | Light + dark mode (follows system), respects system font size. From M1. |
@@ -81,6 +81,7 @@ e2e/                      # Playwright UI checks (screenshots are gitignored)
 app/                      # screens (Expo Router)
   _layout.tsx
   index.tsx               # home: tense chips, mode, Start; due counts per tense; settings link
+  welcome.tsx             # first launch: "Which tenses are you learning?" (My tenses)
   practice.tsx            # the quiz screen
   settings.tsx
   about.tsx               # version, data source attribution
@@ -114,6 +115,7 @@ src/
     AccentKeyboardRow.tsx
     FeedbackBanner.tsx
     ConjugationTable.tsx  # used by "Show all forms"
+    TensePicker.tsx       # My tenses multi-select (first launch + Settings)
 scripts/
   build-verbs/            # turns the raw source data into src/data/verbs.json
 tests/
@@ -298,13 +300,27 @@ Questions are random from the tenses selected for this session (optionally also 
 
 ## 7b. Tense selection
 
-- The home screen shows a row of **tense chips** (one per available tense) above the mode choice and the "Start" button. The user toggles any subset; at least one must be selected.
+Two levels: **My tenses** (what the user is learning) and **session chips** (what to practise right now).
+
+### My tenses
+- **First launch:** a "Which tenses are you learning?" screen with a multi-select (`TensePicker`). Only **Present** is preselected; the user can add more there or later.
+  - Each option shows an example form so beginners recognise it (*Present: hablo · Preterite: hablé · Future: hablaré*).
+  - At least one tense must stay selected. A note says it can be changed later in Settings.
+- **Settings → "My tenses":** the same picker, any time.
+- Persisted locally, together with a "first launch done" flag.
+- Tenses added to the app later (M5) are offered but **not** added to My tenses automatically.
+
+### Session chips (home screen)
+- A row of **tense chips**, one per tense in **My tenses**, above the mode choice and the "Start" button. The user toggles any subset; at least one must be selected.
   - One tense selected → focused practice.
   - Several selected → items from all of them are mixed in the round.
-- The selection is **remembered** (persisted locally) and preselected next time.
+- The selection is **remembered** (persisted locally) and preselected next time. By default all of My tenses are selected.
+- Removing a tense from My tenses removes its chip; if no chip is left selected, all of My tenses are selected.
+- While My tenses has only one tense, the chip row is hidden and that tense is used.
 - Applies to both scheduled mode and free practice.
-- **Unselected tenses keep their schedule.** Their items still become due; they're just not asked. The home screen shows due counts per tense (e.g. "Present · 12 due") on or next to each chip, so the user knows to come back to them.
-- While only one tense exists (before M5), the chip row is hidden and the present tense is used.
+
+### Both levels
+- **Unselected or removed tenses keep their schedule.** Progress is never deleted; items still become due, they're just not asked. The home screen shows due counts per chip (e.g. "Present · 12 due").
 - Tense availability goes through `entitlements.canUseTense()` so tenses could become a Pro feature later without changing the screen logic.
 
 The scheduler is pure logic (takes progress + settings + "now", returns a list of items) and must have unit tests, including date-based ones with a fixed "now".
@@ -319,8 +335,9 @@ The scheduler is pure logic (takes progress + settings + "now", returns a list o
 | Show vosotros | on / off | on |
 | Round length | 10 / 20 / 30 | 20 |
 | New items per round | 0–10 | 5 |
+| My tenses (§7b) | any non-empty subset of available tenses | Present |
 
-Tense selection is **not** a setting; it's chosen per session on the home screen (§7b).
+The per-session choice among My tenses is **not** a setting; it's made with the chips on the home screen (§7b).
 
 Theme follows the system (light/dark); no manual toggle needed in v1. The interface language follows the device, falling back to English.
 
@@ -431,13 +448,17 @@ Each milestone: work on a branch (`m1-quiz`, …), open a pull request, and fini
 ### M2: Real data
 - Human reviews `docs/research/candidate-verbs.tsv` → `scripts/build-verbs/verb-list.json` (~300 verbs incl. common reflexive verbs). Can be done before M2 starts.
 - Draft `translations.en.json` (short glosses); human reviews.
-- Fetch + build scripts from §4.3; generate ~300 verbs, present tense (the script supports all simple tenses + compound from the start; only present is switched on in the app).
+- Fetch + build scripts from §4.3; generate ~300 verbs with **present, preterite and future** (the script supports all simple tenses + compound from the start; these three are switched on).
+- Spot-check list includes preterite and future irregulars (*fue, tuvo, hizo, dijo, pude, tendré, haré, diré, podré, querré*).
+- The app still practises present only until M3 adds My tenses.
 - Spot-check tests pass. Attribution on the About screen; `src/data/LICENSE-DATA.md`.
 - The environment running M2 needs network access to `kaikki.org` (for fetch only).
 - **Done when:** the app uses generated data and the build script is repeatable.
 
 ### M3: Settings + rounds
-- Settings screen per §8.
+- Settings screen per §8, including **My tenses** (§7b).
+- First-launch "Which tenses are you learning?" screen (only Present preselected); shown once.
+- Practice uses all of My tenses (mixed) until M4 adds the session chips.
 - Rounds with in-round re-asking of mistakes (§7a) and a summary screen (score, list of mistakes).
 - Settings persisted locally.
 - First check on the Android phone.
@@ -446,11 +467,11 @@ Each milestone: work on a branch (`m1-quiz`, …), open a pull request, and fini
 - Progress store from §7 with Leitner boxes and due dates (§7a).
 - Scheduled mode builds rounds from due + new + weak items. Free practice mode added.
 - Home screen shows simple stats (items per box, due today), and due counts per tense.
-- Session tense selection from §7b (state + persistence + scheduler filtering), with the chip row hidden while only one tense exists.
+- Session chips from §7b, limited to My tenses (state + persistence + scheduler filtering), hidden while My tenses has only one tense.
 
 ### M5: More tenses
-Add, in this order: preterite → imperfect → future → present perfect → conditional → present subjunctive.
-- Extend the build script; the tense chip row (§7b) appears once a second tense exists.
+Add the remaining tenses, in this order: imperfect → present perfect → conditional → present subjunctive (preterite and future arrive in M2).
+- Switch them on in the build script; they appear in the My tenses picker (not auto-selected).
 - Test focused (one tense) and mixed (several tenses) rounds on the device.
 
 ### M6: Release prep (Google Play)
