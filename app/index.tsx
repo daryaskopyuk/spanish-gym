@@ -28,6 +28,12 @@ export default function HomeScreen() {
             testID="start-button"
           />
           <Button
+            label={t('home.settings')}
+            onPress={() => router.push('/settings')}
+            variant="secondary"
+            testID="settings-link"
+          />
+          <Button
             label={t('home.about')}
             onPress={() => router.push('/about')}
             variant="secondary"

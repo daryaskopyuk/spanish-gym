@@ -65,3 +65,9 @@ One entry per decision: what was decided and why. Newest at the bottom. Agents m
 | 2026-11-19 | Browser tests have a 30 s per-test and 5 min overall limit | A stalled run once blocked for 18 minutes; fail fast instead. |
 | 2026-11-19 | Until scheduling (M4), practice picks uniformly from all 301 verbs | Frequency-ordered introduction of new verbs is the scheduler's job (PLAN §7a). |
 | 2026-11-19 | The "Not quite" feedback no longer repeats "Your answer: …" | Owner feedback: the answer is already visible in the locked, red-bordered answer box just above. |
+| 2026-11-19 | A milestone may be split into several small PRs, merged in order (next PR starts after the previous one is merged); aim for under ~400–500 changed lines per PR, excluding generated data | Owner: avoid gigantic PRs; small PRs are easier to review and to check on the phone. Supersedes "one PR per milestone". |
+| 2026-11-19 | M3 split: M3.1 settings + Settings screen, M3.2 My tenses, M3.3 rounds + summary | See above. |
+| 2026-11-19 | Settings live in a Zustand store saved with AsyncStorage (key `settings`, schema version 1); saved data is validated on load and invalid fields fall back to defaults | First use of the two approved libraries; never crash on old or corrupted saved data. |
+| 2026-11-19 | The splash screen stays up until saved settings are loaded | Avoids a flash of default settings on start (loading takes milliseconds). |
+| 2026-11-19 | "New items per round" not in M3; added with scheduling in M4 if still wanted | It has no effect until progress is tracked. |
+| 2026-11-19 | Settings defaults: translation after, 20 questions per round, vosotros on; Settings page only (first launch asks only for tenses) | Owner decisions. |

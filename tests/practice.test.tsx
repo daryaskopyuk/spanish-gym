@@ -6,6 +6,7 @@ import type { Person } from '@/data/types';
 import { getVerb } from '@/data/verbRepository';
 import { generateQuestion, type ConjugationQuestion } from '@/exercises/conjugationInput/generator';
 
+import { DEFAULT_SETTINGS, useSettingsStore } from '@/settings/settingsStore';
 import { lightColors } from '@/theme';
 
 import PracticeScreen from '../app/practice';
@@ -29,6 +30,7 @@ function question(infinitive: string, person: Person): ConjugationQuestion {
 const mockGenerate = generateQuestion as jest.MockedFunction<typeof generateQuestion>;
 
 beforeEach(() => {
+  useSettingsStore.setState(DEFAULT_SETTINGS);
   mockGenerate.mockReset();
   mockGenerate
     .mockReturnValueOnce(question('hablar', 'vosotros'))
@@ -174,5 +176,43 @@ describe('PracticeScreen', () => {
     mockGenerate.mockReset().mockReturnValue(undefined);
     await render(<PracticeScreen />);
     expect(screen.getByText('There are no verbs to practise yet.')).toBeOnTheScreen();
+  });
+
+  describe('follows the settings', () => {
+    it('"before": shows the translation with the question', async () => {
+      useSettingsStore.setState({ showTranslation: 'before' });
+      await render(<PracticeScreen />);
+      expect(screen.getByTestId('translation')).toHaveTextContent(/to speak/);
+      await answerWith('habláis');
+      expect(screen.getByTestId('feedback-correct')).not.toHaveTextContent(/Meaning/);
+    });
+
+    it('"never": no translation before or after answering', async () => {
+      useSettingsStore.setState({ showTranslation: 'never' });
+      await render(<PracticeScreen />);
+      expect(screen.queryByTestId('translation')).toBeNull();
+      await answerWith('habláis');
+      expect(screen.queryByTestId('translation')).toBeNull();
+    });
+
+    it('vosotros off: not asked, and hidden in "Show all forms"', async () => {
+      useSettingsStore.setState({ showVosotros: false });
+      mockGenerate.mockReset().mockReturnValue(question('hablar', 'yo'));
+      await render(<PracticeScreen />);
+      expect(mockGenerate).toHaveBeenCalledWith(
+        expect.objectContaining({ persons: ['yo', 'tu', 'el', 'nosotros', 'ellos'] }),
+      );
+      await answerWith('hablo');
+      await fireEvent.press(screen.getByTestId('show-all-forms'));
+      expect(screen.getByTestId('table-row-nosotros')).toBeOnTheScreen();
+      expect(screen.queryByTestId('table-row-vosotros')).toBeNull();
+    });
+
+    it('vosotros on (default): asked and shown', async () => {
+      await render(<PracticeScreen />);
+      expect(mockGenerate).toHaveBeenCalledWith(
+        expect.objectContaining({ persons: expect.arrayContaining(['vosotros']) }),
+      );
+    });
   });
 });

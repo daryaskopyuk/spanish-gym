@@ -12,14 +12,22 @@ type Props = {
   forms: TenseForms;
   /** The person that was asked; its row is highlighted. */
   highlight?: Person;
+  /** Persons to show (default: all that have a form). */
+  persons?: readonly Person[];
 };
 
 /** Full conjugation of one verb in one tense ("Show all forms"). */
-export function ConjugationTable({ infinitive, tense, forms, highlight }: Props) {
+export function ConjugationTable({
+  infinitive,
+  tense,
+  forms,
+  highlight,
+  persons: visible = PERSONS,
+}: Props) {
   const { t } = useTranslation();
   const theme = useTheme();
   const styles = useMemo(() => makeStyles(theme), [theme]);
-  const persons = PERSONS.filter((p) => forms[p] !== undefined);
+  const persons = PERSONS.filter((p) => forms[p] !== undefined && visible.includes(p));
 
   return (
     <View
