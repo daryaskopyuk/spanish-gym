@@ -28,6 +28,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ title: t('app.title'), headerShown: false }} />
         <Stack.Screen name="practice" options={{ title: t('practice.title') }} />
+        <Stack.Screen name="about" options={{ title: t('about.title') }} />
       </Stack>
       <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
     </ThemeProvider>

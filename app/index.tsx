@@ -27,6 +27,12 @@ export default function HomeScreen() {
             onPress={() => router.push('/practice')}
             testID="start-button"
           />
+          <Button
+            label={t('home.about')}
+            onPress={() => router.push('/about')}
+            variant="secondary"
+            testID="about-link"
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -44,6 +50,6 @@ function makeStyles({ colors, spacing, fontSize }: Theme) {
     },
     title: { fontSize: fontSize.xl, fontWeight: '700', color: colors.text },
     subtitle: { fontSize: fontSize.md, color: colors.textMuted },
-    start: { marginTop: spacing.lg },
+    start: { marginTop: spacing.lg, gap: spacing.sm },
   });
 }

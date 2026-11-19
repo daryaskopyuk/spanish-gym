@@ -7,6 +7,9 @@ export default defineConfig({
   testDir: './e2e',
   outputDir: './test-results',
   fullyParallel: true,
+  // Fail fast instead of hanging if the browser or server stalls.
+  timeout: 30_000,
+  globalTimeout: 5 * 60_000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? 'github' : 'list',

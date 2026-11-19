@@ -22,6 +22,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - name: Generated verb data is up to date
+        run: npm run build:verbs && git diff --exit-code src/data/verbs.json
 
   e2e:
     name: Browser UI tests

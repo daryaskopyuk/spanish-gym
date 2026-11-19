@@ -1,0 +1,927 @@
+[
+  {
+    "infinitive": "hacer"
+  },
+  {
+    "infinitive": "ser"
+  },
+  {
+    "infinitive": "decir"
+  },
+  {
+    "infinitive": "ver"
+  },
+  {
+    "infinitive": "estar"
+  },
+  {
+    "infinitive": "ir"
+  },
+  {
+    "infinitive": "irse",
+    "base": "ir"
+  },
+  {
+    "infinitive": "hablar"
+  },
+  {
+    "infinitive": "tener"
+  },
+  {
+    "infinitive": "pasar"
+  },
+  {
+    "infinitive": "haber"
+  },
+  {
+    "infinitive": "morir"
+  },
+  {
+    "infinitive": "pensar"
+  },
+  {
+    "infinitive": "saber"
+  },
+  {
+    "infinitive": "salir"
+  },
+  {
+    "infinitive": "volver"
+  },
+  {
+    "infinitive": "venir"
+  },
+  {
+    "infinitive": "dar"
+  },
+  {
+    "infinitive": "dejar"
+  },
+  {
+    "infinitive": "encontrar"
+  },
+  {
+    "infinitive": "trabajar"
+  },
+  {
+    "infinitive": "llegar"
+  },
+  {
+    "infinitive": "esperar"
+  },
+  {
+    "infinitive": "tomar"
+  },
+  {
+    "infinitive": "buscar"
+  },
+  {
+    "infinitive": "llamar"
+  },
+  {
+    "infinitive": "llamarse",
+    "base": "llamar"
+  },
+  {
+    "infinitive": "suponer"
+  },
+  {
+    "infinitive": "poner"
+  },
+  {
+    "infinitive": "poder"
+  },
+  {
+    "infinitive": "perder"
+  },
+  {
+    "infinitive": "cuidar"
+  },
+  {
+    "infinitive": "sentir"
+  },
+  {
+    "infinitive": "sentirse",
+    "base": "sentir"
+  },
+  {
+    "infinitive": "vivir"
+  },
+  {
+    "infinitive": "matar"
+  },
+  {
+    "infinitive": "entrar"
+  },
+  {
+    "infinitive": "comer"
+  },
+  {
+    "infinitive": "oír"
+  },
+  {
+    "infinitive": "dormir"
+  },
+  {
+    "infinitive": "acostarse",
+    "base": "acostar",
+    "dropForms": ["acosto", "acostas", "acosta", "acostan", "acoste", "acostes", "acosten"]
+  },
+  {
+    "infinitive": "seguir"
+  },
+  {
+    "infinitive": "tratar"
+  },
+  {
+    "infinitive": "cambiar"
+  },
+  {
+    "infinitive": "usar"
+  },
+  {
+    "infinitive": "jugar"
+  },
+  {
+    "infinitive": "llevar"
+  },
+  {
+    "infinitive": "conseguir"
+  },
+  {
+    "infinitive": "creer"
+  },
+  {
+    "infinitive": "terminar"
+  },
+  {
+    "infinitive": "ayudar"
+  },
+  {
+    "infinitive": "empezar"
+  },
+  {
+    "infinitive": "querer"
+  },
+  {
+    "infinitive": "intentar"
+  },
+  {
+    "infinitive": "pagar"
+  },
+  {
+    "infinitive": "ganar"
+  },
+  {
+    "infinitive": "entender"
+  },
+  {
+    "infinitive": "escuchar"
+  },
+  {
+    "infinitive": "mirar"
+  },
+  {
+    "infinitive": "conocer"
+  },
+  {
+    "infinitive": "pedir"
+  },
+  {
+    "infinitive": "divertirse",
+    "base": "divertir"
+  },
+  {
+    "infinitive": "escribir"
+  },
+  {
+    "infinitive": "comprar"
+  },
+  {
+    "infinitive": "partir"
+  },
+  {
+    "infinitive": "traer"
+  },
+  {
+    "infinitive": "leer"
+  },
+  {
+    "infinitive": "acabar"
+  },
+  {
+    "infinitive": "quedar"
+  },
+  {
+    "infinitive": "quedarse",
+    "base": "quedar"
+  },
+  {
+    "infinitive": "beber"
+  },
+  {
+    "infinitive": "contar"
+  },
+  {
+    "infinitive": "abrir"
+  },
+  {
+    "infinitive": "sacar"
+  },
+  {
+    "infinitive": "correr"
+  },
+  {
+    "infinitive": "deber"
+  },
+  {
+    "infinitive": "mantener"
+  },
+  {
+    "infinitive": "preguntar"
+  },
+  {
+    "infinitive": "salvar"
+  },
+  {
+    "infinitive": "parecer"
+  },
+  {
+    "infinitive": "preparar"
+  },
+  {
+    "infinitive": "aprender"
+  },
+  {
+    "infinitive": "tocar"
+  },
+  {
+    "infinitive": "recibir"
+  },
+  {
+    "infinitive": "caer"
+  },
+  {
+    "infinitive": "parar"
+  },
+  {
+    "infinitive": "regresar"
+  },
+  {
+    "infinitive": "romper"
+  },
+  {
+    "infinitive": "robar"
+  },
+  {
+    "infinitive": "olvidar"
+  },
+  {
+    "infinitive": "vestir"
+  },
+  {
+    "infinitive": "vestirse",
+    "base": "vestir"
+  },
+  {
+    "infinitive": "ducharse",
+    "base": "duchar"
+  },
+  {
+    "infinitive": "probar"
+  },
+  {
+    "infinitive": "cerrar"
+  },
+  {
+    "infinitive": "enviar"
+  },
+  {
+    "infinitive": "vender"
+  },
+  {
+    "infinitive": "casarse",
+    "base": "casar"
+  },
+  {
+    "infinitive": "bailar"
+  },
+  {
+    "infinitive": "llorar"
+  },
+  {
+    "infinitive": "caminar"
+  },
+  {
+    "infinitive": "mentir"
+  },
+  {
+    "infinitive": "decidir"
+  },
+  {
+    "infinitive": "cenar"
+  },
+  {
+    "infinitive": "luchar"
+  },
+  {
+    "infinitive": "meter"
+  },
+  {
+    "infinitive": "volar"
+  },
+  {
+    "infinitive": "pesar"
+  },
+  {
+    "infinitive": "escapar"
+  },
+  {
+    "infinitive": "ocupar"
+  },
+  {
+    "infinitive": "subir"
+  },
+  {
+    "infinitive": "coger"
+  },
+  {
+    "infinitive": "confiar"
+  },
+  {
+    "infinitive": "echar"
+  },
+  {
+    "infinitive": "suceder"
+  },
+  {
+    "infinitive": "arreglar"
+  },
+  {
+    "infinitive": "equivocarse",
+    "base": "equivocar"
+  },
+  {
+    "infinitive": "ocurrir"
+  },
+  {
+    "infinitive": "elegir"
+  },
+  {
+    "infinitive": "funcionar"
+  },
+  {
+    "infinitive": "bajar"
+  },
+  {
+    "infinitive": "evitar"
+  },
+  {
+    "infinitive": "desaparecer"
+  },
+  {
+    "infinitive": "descubrir"
+  },
+  {
+    "infinitive": "enterarse",
+    "base": "enterar"
+  },
+  {
+    "infinitive": "cantar"
+  },
+  {
+    "infinitive": "disparar"
+  },
+  {
+    "infinitive": "pelear"
+  },
+  {
+    "infinitive": "actuar"
+  },
+  {
+    "infinitive": "recordar"
+  },
+  {
+    "infinitive": "acordarse",
+    "base": "acordar"
+  },
+  {
+    "infinitive": "bromear"
+  },
+  {
+    "infinitive": "crear"
+  },
+  {
+    "infinitive": "conducir"
+  },
+  {
+    "infinitive": "comenzar"
+  },
+  {
+    "infinitive": "proteger"
+  },
+  {
+    "infinitive": "aceptar"
+  },
+  {
+    "infinitive": "detener"
+  },
+  {
+    "infinitive": "andar"
+  },
+  {
+    "infinitive": "preocuparse",
+    "base": "preocupar"
+  },
+  {
+    "infinitive": "encantar"
+  },
+  {
+    "infinitive": "tirar"
+  },
+  {
+    "infinitive": "sentarse",
+    "base": "sentar"
+  },
+  {
+    "infinitive": "herir"
+  },
+  {
+    "infinitive": "averiguar"
+  },
+  {
+    "infinitive": "asesinar"
+  },
+  {
+    "infinitive": "cansarse",
+    "base": "cansar"
+  },
+  {
+    "infinitive": "obtener"
+  },
+  {
+    "infinitive": "resolver"
+  },
+  {
+    "infinitive": "convertir"
+  },
+  {
+    "infinitive": "destruir"
+  },
+  {
+    "infinitive": "construir"
+  },
+  {
+    "infinitive": "atrapar"
+  },
+  {
+    "infinitive": "limpiar"
+  },
+  {
+    "infinitive": "cortar"
+  },
+  {
+    "infinitive": "necesitar"
+  },
+  {
+    "infinitive": "gritar"
+  },
+  {
+    "infinitive": "asustar"
+  },
+  {
+    "infinitive": "estudiar"
+  },
+  {
+    "infinitive": "discutir"
+  },
+  {
+    "infinitive": "recuperar"
+  },
+  {
+    "infinitive": "huir"
+  },
+  {
+    "infinitive": "invitar"
+  },
+  {
+    "infinitive": "manejar"
+  },
+  {
+    "infinitive": "sufrir"
+  },
+  {
+    "infinitive": "quejarse",
+    "base": "quejar"
+  },
+  {
+    "infinitive": "cumplir"
+  },
+  {
+    "infinitive": "crecer"
+  },
+  {
+    "infinitive": "amar"
+  },
+  {
+    "infinitive": "resultar"
+  },
+  {
+    "infinitive": "mover"
+  },
+  {
+    "infinitive": "jurar"
+  },
+  {
+    "infinitive": "pescar"
+  },
+  {
+    "infinitive": "enamorarse",
+    "base": "enamorar"
+  },
+  {
+    "infinitive": "considerar"
+  },
+  {
+    "infinitive": "descansar"
+  },
+  {
+    "infinitive": "permitir"
+  },
+  {
+    "infinitive": "recoger"
+  },
+  {
+    "infinitive": "investigar"
+  },
+  {
+    "infinitive": "mostrar"
+  },
+  {
+    "infinitive": "explicar"
+  },
+  {
+    "infinitive": "abandonar"
+  },
+  {
+    "infinitive": "imaginar"
+  },
+  {
+    "infinitive": "controlar"
+  },
+  {
+    "infinitive": "esconder"
+  },
+  {
+    "infinitive": "golpear"
+  },
+  {
+    "infinitive": "sobrevivir"
+  },
+  {
+    "infinitive": "viajar"
+  },
+  {
+    "infinitive": "cometer"
+  },
+  {
+    "infinitive": "revisar"
+  },
+  {
+    "infinitive": "compartir"
+  },
+  {
+    "infinitive": "planear"
+  },
+  {
+    "infinitive": "responder"
+  },
+  {
+    "infinitive": "enseñar"
+  },
+  {
+    "infinitive": "lograr"
+  },
+  {
+    "infinitive": "gustar"
+  },
+  {
+    "infinitive": "servir"
+  },
+  {
+    "infinitive": "utilizar"
+  },
+  {
+    "infinitive": "firmar"
+  },
+  {
+    "infinitive": "continuar"
+  },
+  {
+    "infinitive": "cubrir"
+  },
+  {
+    "infinitive": "fumar"
+  },
+  {
+    "infinitive": "respirar"
+  },
+  {
+    "infinitive": "atacar"
+  },
+  {
+    "infinitive": "cruzar"
+  },
+  {
+    "infinitive": "disponer"
+  },
+  {
+    "infinitive": "engañar"
+  },
+  {
+    "infinitive": "saltar"
+  },
+  {
+    "infinitive": "arruinar"
+  },
+  {
+    "infinitive": "presentar"
+  },
+  {
+    "infinitive": "disfrutar"
+  },
+  {
+    "infinitive": "acusar"
+  },
+  {
+    "infinitive": "quitar"
+  },
+  {
+    "infinitive": "guardar"
+  },
+  {
+    "infinitive": "complicar"
+  },
+  {
+    "infinitive": "causar"
+  },
+  {
+    "infinitive": "molestar"
+  },
+  {
+    "infinitive": "demostrar"
+  },
+  {
+    "infinitive": "mejorar"
+  },
+  {
+    "infinitive": "levantar"
+  },
+  {
+    "infinitive": "levantarse",
+    "base": "levantar"
+  },
+  {
+    "infinitive": "soñar"
+  },
+  {
+    "infinitive": "nacer"
+  },
+  {
+    "infinitive": "aburrir"
+  },
+  {
+    "infinitive": "reír"
+  },
+  {
+    "infinitive": "colgar"
+  },
+  {
+    "infinitive": "comprobar"
+  },
+  {
+    "infinitive": "celebrar"
+  },
+  {
+    "infinitive": "mandar"
+  },
+  {
+    "infinitive": "convencer"
+  },
+  {
+    "infinitive": "montar"
+  },
+  {
+    "infinitive": "despertar"
+  },
+  {
+    "infinitive": "despertarse",
+    "base": "despertar"
+  },
+  {
+    "infinitive": "visitar"
+  },
+  {
+    "infinitive": "cocinar"
+  },
+  {
+    "infinitive": "arrestar"
+  },
+  {
+    "infinitive": "soportar"
+  },
+  {
+    "infinitive": "cargar"
+  },
+  {
+    "infinitive": "interesar"
+  },
+  {
+    "infinitive": "despedir"
+  },
+  {
+    "infinitive": "quemar"
+  },
+  {
+    "infinitive": "ofrecer"
+  },
+  {
+    "infinitive": "entregar"
+  },
+  {
+    "infinitive": "informar"
+  },
+  {
+    "infinitive": "juzgar"
+  },
+  {
+    "infinitive": "vigilar"
+  },
+  {
+    "infinitive": "enfadarse",
+    "base": "enfadar"
+  },
+  {
+    "infinitive": "fingir"
+  },
+  {
+    "infinitive": "aparecer"
+  },
+  {
+    "infinitive": "incluir"
+  },
+  {
+    "infinitive": "prometer"
+  },
+  {
+    "infinitive": "lavar"
+  },
+  {
+    "infinitive": "lavarse",
+    "base": "lavar"
+  },
+  {
+    "infinitive": "grabar"
+  },
+  {
+    "infinitive": "sonar"
+  },
+  {
+    "infinitive": "permanecer"
+  },
+  {
+    "infinitive": "nadar"
+  },
+  {
+    "infinitive": "mencionar"
+  },
+  {
+    "infinitive": "dirigir"
+  },
+  {
+    "infinitive": "ocultar"
+  },
+  {
+    "infinitive": "renunciar"
+  },
+  {
+    "infinitive": "apagar"
+  },
+  {
+    "infinitive": "prestar"
+  },
+  {
+    "infinitive": "admitir"
+  },
+  {
+    "infinitive": "lanzar"
+  },
+  {
+    "infinitive": "observar"
+  },
+  {
+    "infinitive": "superar"
+  },
+  {
+    "infinitive": "desear"
+  },
+  {
+    "infinitive": "comprender"
+  },
+  {
+    "infinitive": "organizar"
+  },
+  {
+    "infinitive": "alcanzar"
+  },
+  {
+    "infinitive": "armar"
+  },
+  {
+    "infinitive": "agradecer"
+  },
+  {
+    "infinitive": "devolver"
+  },
+  {
+    "infinitive": "vencer"
+  },
+  {
+    "infinitive": "costar"
+  },
+  {
+    "infinitive": "adivinar"
+  },
+  {
+    "infinitive": "besar"
+  },
+  {
+    "infinitive": "significar"
+  },
+  {
+    "infinitive": "eliminar"
+  },
+  {
+    "infinitive": "encender"
+  },
+  {
+    "infinitive": "gastar"
+  },
+  {
+    "infinitive": "identificar"
+  },
+  {
+    "infinitive": "contratar"
+  },
+  {
+    "infinitive": "marchar"
+  },
+  {
+    "infinitive": "pegar"
+  },
+  {
+    "infinitive": "practicar"
+  },
+  {
+    "infinitive": "liberar"
+  },
+  {
+    "infinitive": "realizar"
+  },
+  {
+    "infinitive": "notar"
+  },
+  {
+    "infinitive": "unir"
+  },
+  {
+    "infinitive": "avanzar"
+  },
+  {
+    "infinitive": "contestar"
+  },
+  {
+    "infinitive": "aguantar"
+  },
+  {
+    "infinitive": "reunir"
+  },
+  {
+    "infinitive": "asegurar"
+  },
+  {
+    "infinitive": "reconocer"
+  },
+  {
+    "infinitive": "importar"
+  },
+  {
+    "infinitive": "entrenar"
+  },
+  {
+    "infinitive": "formar"
+  },
+  {
+    "infinitive": "encerrar"
+  }
+]

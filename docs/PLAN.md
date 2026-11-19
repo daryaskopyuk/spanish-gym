@@ -10,7 +10,7 @@ This file is the source of truth for implementation. Work through it **one miles
 |---|---|
 | M0 Setup + agent tooling | ✅ done (PR #1) |
 | M1 Quiz with sample data | ✅ done (PR #3) |
-| M2 Real data | ⬜ |
+| M2 Real data | ✅ done (PR #6) |
 | M3 Settings + rounds | ⬜ |
 | M4 Progress + scheduling | ⬜ |
 | M5 More tenses | ⬜ |

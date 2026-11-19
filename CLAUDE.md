@@ -14,7 +14,8 @@ Mobile app (Expo / React Native, TypeScript) for practising Spanish verb conjuga
 npm run check        # typecheck + lint + unit/component tests. Run before saying you're done.
 npm run e2e          # web build + Playwright flow tests + screenshots in e2e/screenshots/
 npm test -- <path>   # run one test file
-npm run build:verbs  # regenerate src/data/verbs.json from raw data (from M2)
+npm run build:verbs  # regenerate src/data/verbs.json (offline; see scripts/build-verbs/README.md)
+npm run fetch:verbs  # rare, needs network: refresh scripts/build-verbs/snapshot/ from kaikki.org
 npm start            # Expo dev server (human scans QR with Expo Go)
 npm run web          # dev server in the browser
 ```
@@ -34,7 +35,7 @@ After any UI change: run `npm run e2e` and **look at the screenshots** (light, d
 
 ## Data
 
-- `src/data/verbs.json` is **generated**. Never edit it by hand (after M2) and don't read it: it is large. Change `scripts/build-verbs/` instead.
+- `src/data/verbs.json` is **generated**. Never edit it by hand and don't read it: it is large. Change `scripts/build-verbs/` instead. Don't read `scripts/build-verbs/snapshot/kaikki-verbs.jsonl` whole either (~2 MB).
 - Reflexive forms include the pronoun (`me levanto`). Compound tenses are multi-word (`he hablado`). A tense may lack some persons (imperative has no `yo`).
 - Answer checking: missing accents are accepted (`correct_missing_accent`), but `ñ` is never equal to `n`.
 
