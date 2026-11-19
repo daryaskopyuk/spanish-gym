@@ -190,6 +190,7 @@ export default function PracticeScreen() {
                   tense={question.tense}
                   forms={tableForms}
                   highlight={question.person}
+                  persons={baseContext.persons}
                 />
               )}
             </>

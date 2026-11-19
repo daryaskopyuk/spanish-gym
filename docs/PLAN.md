@@ -11,7 +11,7 @@ This file is the source of truth for implementation. Work through it **one miles
 | M0 Setup + agent tooling | ✅ done (PR #1) |
 | M1 Quiz with sample data | ✅ done (PR #3) |
 | M2 Real data | ✅ done (PR #6) |
-| M3 Settings + rounds | ⬜ |
+| M3 Settings + rounds | 🔄 in progress (M3.1) |
 | M4 Progress + scheduling | ⬜ |
 | M5 More tenses | ⬜ |
 | M6 Release prep (Google Play) | ⬜ |
@@ -334,7 +334,7 @@ The scheduler is pure logic (takes progress + settings + "now", returns a list o
 | Show translation | before / after / never | after |
 | Show vosotros | on / off | on |
 | Round length | 10 / 20 / 30 | 20 |
-| New items per round | 0–10 | 5 |
+| New items per round (M4, if still wanted) | 0–10 | 5 |
 | My tenses (§7b) | any non-empty subset of available tenses | Present |
 
 The per-session choice among My tenses is **not** a setting; it's made with the chips on the home screen (§7b).
@@ -423,7 +423,7 @@ On every push and pull request: install with `npm ci` on the pinned Node version
 
 ## 11. Milestones
 
-Each milestone: work on a branch (`m1-quiz`, …), open a pull request, and finish with: `npm run check` passes, `npm run e2e` passes (from M1), Status table and `docs/decisions.md` updated, app checked by a human on the iPhone via Expo Go, PR merged.
+Each milestone: one or more small PRs, each on its own branch (`m1-quiz`, `m3-1-settings`, …), merged in order (the next PR starts after the previous one is merged). Each PR keeps `check` and `e2e` green and is checked on the iPhone. The milestone finishes with: `npm run check` passes, `npm run e2e` passes (from M1), Status table and `docs/decisions.md` updated, app checked by a human on the iPhone via Expo Go, PR merged.
 
 ### M0: Setup + agent tooling
 - Create Expo project (TypeScript strict, Expo Router) inside the existing repo (which already has `CLAUDE.md`, `docs/`, `.claude/settings.json`).
@@ -456,6 +456,7 @@ Each milestone: work on a branch (`m1-quiz`, …), open a pull request, and fini
 - **Done when:** the app uses generated data and the build script is repeatable.
 
 ### M3: Settings + rounds
+Split into three PRs: **M3.1** settings store + Settings screen (translation, round length, vosotros), **M3.2** My tenses (first-launch picker + Settings), **M3.3** rounds + summary, Android check.
 - Settings screen per §8, including **My tenses** (§7b).
 - First-launch "Which tenses are you learning?" screen (only Present preselected); shown once.
 - Practice uses all of My tenses (mixed) until M4 adds the session chips.
@@ -511,7 +512,7 @@ More ideas, with details, are collected in `docs/IDEAS.md`.
 
 ## 14. Working agreement for the coding assistant
 
-- Do one milestone at a time, on its own branch; stop and summarize at the end of each.
+- Do one milestone at a time. Split it into small PRs (aim for under ~400–500 changed lines, excluding generated data), merged in order; stop and summarize at the end of each PR.
 - Run `npm run check` before reporting anything as done; after UI changes also run `npm run e2e` and look at the screenshots.
 - At the start and end of a milestone, update the Status table. Log new decisions in `docs/decisions.md`.
 - Never reverse a logged decision without asking.

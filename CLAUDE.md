@@ -42,7 +42,7 @@ After any UI change: run `npm run e2e` and **look at the screenshots** (light, d
 
 ## Working agreement
 
-- One milestone at a time, on its own branch (`m1-quiz`, …), with a pull request. Stop and summarize at the end.
+- One milestone at a time. A milestone may be split into several small PRs (`m3-1-settings`, `m3-2-…`), merged in order; start the next PR only after the previous one is merged. Aim for under ~400–500 changed lines per PR, excluding generated data. Stop and summarize at the end of each PR.
 - Update the Status table in `docs/PLAN.md` at the start and end of a milestone; add new decisions to `docs/decisions.md`.
 - Ask before adding a dependency not listed in `docs/PLAN.md` §2.
 - Never run `eas submit`, `eas update` or force-push.

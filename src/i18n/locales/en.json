@@ -5,7 +5,8 @@
   "home": {
     "subtitle": "Practise Spanish verb conjugation",
     "start": "Start",
-    "about": "About"
+    "about": "About",
+    "settings": "Settings"
   },
   "practice": {
     "title": "Practice",
@@ -57,5 +58,23 @@
     "dataLicense": "The app's verb data file is shared under the same license, CC BY-SA 4.0.",
     "openLicense": "Read the CC BY-SA 4.0 license",
     "openWiktionary": "Visit Wiktionary"
+  },
+  "settings": {
+    "title": "Settings",
+    "translation": {
+      "title": "Show translation",
+      "description": "When to show the English meaning of the verb: before you answer, after, or never.",
+      "before": "Before",
+      "after": "After",
+      "never": "Never"
+    },
+    "roundLength": {
+      "title": "Questions per round",
+      "description": "How many questions one practice round has."
+    },
+    "vosotros": {
+      "title": "Practise vosotros",
+      "description": "Used in Spain. Turn off if you're learning Latin American Spanish."
+    }
   }
 }
