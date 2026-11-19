@@ -64,3 +64,4 @@ One entry per decision: what was decided and why. Newest at the bottom. Agents m
 | 2026-11-19 | CI checks that the committed `verbs.json` matches `npm run build:verbs` | Keeps the generated file and its inputs in sync. |
 | 2026-11-19 | Browser tests have a 30 s per-test and 5 min overall limit | A stalled run once blocked for 18 minutes; fail fast instead. |
 | 2026-11-19 | Until scheduling (M4), practice picks uniformly from all 301 verbs | Frequency-ordered introduction of new verbs is the scheduler's job (PLAN §7a). |
+| 2026-11-19 | The "Not quite" feedback no longer repeats "Your answer: …" | Owner feedback: the answer is already visible in the locked, red-bordered answer box just above. |

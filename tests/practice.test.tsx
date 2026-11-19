@@ -81,7 +81,8 @@ describe('PracticeScreen', () => {
     await answerWith('hablo');
 
     expect(screen.getByTestId('feedback-wrong')).toBeOnTheScreen();
-    expect(screen.getByText('Your answer: hablo')).toBeOnTheScreen();
+    expect(screen.queryByText(/Your answer/)).toBeNull();
+    expect(screen.getByTestId('answer-input')).toHaveDisplayValue('hablo');
     expect(screen.getByTestId('correct-form')).toHaveTextContent('habláis');
     expect(screen.getByTestId('answer-input').props.editable).toBe(false);
 
