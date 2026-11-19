@@ -3,7 +3,8 @@ import { expect, test } from '@playwright/test';
 import { stripAccents } from '../src/exercises/conjugationInput/checker';
 import { VARIANTS, expectedAnswer, screenshotPath, typeAndCheck, useFontScale } from './helpers';
 
-// The practice loop (PLAN §6a): correct, wrong → correct form → Show all forms → Next,
+// The practice loop (PLAN §6a): wrong → correct form → Show all forms → Next, correct
+// (Show all forms available there too),
 // missing accent. Screenshots in light, dark and large font.
 for (const variant of VARIANTS) {
   test.describe(variant.name, () => {
@@ -42,6 +43,10 @@ for (const variant of VARIANTS) {
       await expect(page.getByTestId('feedback-correct')).toBeVisible();
       await expect(page.getByTestId('translation')).toBeVisible();
       await page.screenshot({ path: screenshotPath(`practice-correct-${variant.name}`) });
+
+      // "Show all forms" is available after a correct answer too.
+      await page.getByTestId('show-all-forms').click();
+      await expect(page.getByTestId('conjugation-table')).toBeVisible();
 
       // Missing accent: skip ahead to a question whose answer has an accent.
       let accented: string | undefined;

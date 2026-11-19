@@ -54,13 +54,16 @@ describe('PracticeScreen', () => {
     expect(screen.getByTestId('check-button')).toBeEnabled();
   });
 
-  it('correct answer → green feedback with translation, no "Show all forms"', async () => {
+  it('correct answer → green feedback with translation, and "Show all forms"', async () => {
     await render(<PracticeScreen />);
     await answerWith('habláis');
     expect(screen.getByTestId('feedback-correct')).toHaveTextContent('Correct!');
     expect(screen.getByTestId('translation')).toHaveTextContent(/to speak/);
     expect(screen.queryByTestId('correct-form')).toBeNull();
-    expect(screen.queryByTestId('show-all-forms')).toBeNull();
+
+    expect(screen.queryByTestId('conjugation-table')).toBeNull();
+    await fireEvent.press(screen.getByTestId('show-all-forms'));
+    expect(screen.getByTestId('table-row-vosotros')).toHaveTextContent(/habláis/);
   });
 
   it('missing accent → counts as correct and shows the accented form', async () => {
@@ -68,7 +71,7 @@ describe('PracticeScreen', () => {
     await answerWith('hablais');
     expect(screen.getByTestId('feedback-correct_missing_accent')).toBeOnTheScreen();
     expect(screen.getByTestId('correct-form')).toHaveTextContent('habláis');
-    expect(screen.queryByTestId('show-all-forms')).toBeNull();
+    expect(screen.getByTestId('show-all-forms')).toBeOnTheScreen();
   });
 
   it('wrong → correct form → Show all forms → Next', async () => {

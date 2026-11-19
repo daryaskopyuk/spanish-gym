@@ -239,6 +239,7 @@ interface Exercise<Q, A> {
    - correct → green, translation (if setting = after)
    - correct with missing accent → green/amber, accented form highlighted
    - wrong → red, user's answer + correct form, translation, **"Show all forms"** button revealing `ConjugationTable` for that verb + tense
+   - every result (correct, missing accent, wrong) has the collapsed **"Show all forms"** button
 5. "Next" button. No auto-advance.
 
 ---

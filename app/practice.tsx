@@ -156,7 +156,7 @@ export default function PracticeScreen() {
             answer={answer}
             translation={settings.showTranslation === 'after' ? translation : undefined}
           />
-          {outcome.result === 'wrong' && tableForms && (
+          {tableForms && (
             <>
               <Button
                 label={showTable ? t('practice.hideAllForms') : t('practice.showAllForms')}
