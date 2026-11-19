@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { Platform, useColorScheme } from 'react-native';
 
+import type { CheckResult } from '@/exercises/types';
+
 import { darkColors, lightColors, type ColorTokens } from './colors';
 
 export { darkColors, lightColors, type ColorTokens };
@@ -52,4 +54,13 @@ export function useTheme(): Theme {
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const fontScale = webTestFontScale();
   return useMemo(() => getTheme(scheme, fontScale), [scheme, fontScale]);
+}
+
+/** Feedback colour for an answer result: green / amber / red. */
+export function resultColor(colors: ColorTokens, result: CheckResult): string {
+  return result === 'correct'
+    ? colors.success
+    : result === 'correct_missing_accent'
+      ? colors.warning
+      : colors.error;
 }

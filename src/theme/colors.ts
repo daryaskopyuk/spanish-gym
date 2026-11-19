@@ -1,5 +1,6 @@
 // The only place colors are defined. Screens and components use these tokens
 // through useTheme() (lint forbids color literals elsewhere).
+// Palette: "Olive grove" (olive green on cream). Text/background pairs meet WCAG AA (4.5:1).
 
 export type ColorTokens = {
   background: string;
@@ -15,27 +16,27 @@ export type ColorTokens = {
 };
 
 export const lightColors: ColorTokens = {
-  background: '#FFFFFF',
-  surface: '#F2F4F7',
-  text: '#11181C',
-  textMuted: '#5B6670',
-  border: '#D0D5DD',
-  primary: '#1D6FD8',
+  background: '#FAF7F0',
+  surface: '#F0EBDC',
+  text: '#1F2A1C',
+  textMuted: '#5A6352',
+  border: '#DCD4C2',
+  primary: '#4A7326',
   onPrimary: '#FFFFFF',
-  success: '#1E8E3E',
-  warning: '#B26A00',
-  error: '#C5221F',
+  success: '#22703A',
+  warning: '#8C4D06',
+  error: '#BF3B28',
 };
 
 export const darkColors: ColorTokens = {
-  background: '#0F1214',
-  surface: '#1C2024',
-  text: '#ECEDEE',
-  textMuted: '#9BA1A6',
-  border: '#33393F',
-  primary: '#5AA2FF',
-  onPrimary: '#0F1214',
-  success: '#5BC877',
-  warning: '#F2B43C',
-  error: '#FF6B66',
+  background: '#161A12',
+  surface: '#22281C',
+  text: '#EEF0E6',
+  textMuted: '#A3AA97',
+  border: '#3A4230',
+  primary: '#A3C962',
+  onPrimary: '#161A12',
+  success: '#7BD389',
+  warning: '#F0A848',
+  error: '#FF7B66',
 };

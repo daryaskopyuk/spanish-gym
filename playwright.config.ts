@@ -15,6 +15,8 @@ export default defineConfig({
     // Phone-sized viewport (iPhone 12–15 class).
     ...devices['iPhone 13'],
     browserName: 'chromium',
+    // Skip UI animations so screenshots are deterministic (the app honours reduced motion).
+    reducedMotion: 'reduce',
   },
   webServer: {
     command: `npx expo serve --port ${PORT}`,

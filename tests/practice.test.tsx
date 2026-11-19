@@ -6,6 +6,8 @@ import type { Person } from '@/data/types';
 import { getVerb } from '@/data/verbRepository';
 import { generateQuestion, type ConjugationQuestion } from '@/exercises/conjugationInput/generator';
 
+import { lightColors } from '@/theme';
+
 import PracticeScreen from '../app/practice';
 
 jest.mock('@/exercises/conjugationInput/generator', () => ({
@@ -57,7 +59,7 @@ describe('PracticeScreen', () => {
   it('correct answer → green feedback with translation, and "Show all forms"', async () => {
     await render(<PracticeScreen />);
     await answerWith('habláis');
-    expect(screen.getByTestId('feedback-correct')).toHaveTextContent('Correct!');
+    expect(screen.getByTestId('feedback-correct')).toHaveTextContent(/Correct!/);
     expect(screen.getByTestId('translation')).toHaveTextContent(/to speak/);
     expect(screen.queryByTestId('correct-form')).toBeNull();
 
@@ -99,6 +101,16 @@ describe('PracticeScreen', () => {
         previous: expect.objectContaining({ infinitive: 'hablar', person: 'vosotros' }),
       }),
     );
+  });
+
+  it.each([
+    ['habláis', lightColors.success],
+    ['hablais', lightColors.warning],
+    ['hablo', lightColors.error],
+  ])('colours the answer box by result (%s)', async (typed, colour) => {
+    await render(<PracticeScreen />);
+    await answerWith(typed);
+    expect(screen.getByTestId('answer-input')).toHaveStyle({ borderColor: colour });
   });
 
   it('requires the reflexive pronoun', async () => {

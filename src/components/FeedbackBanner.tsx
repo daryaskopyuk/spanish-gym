@@ -1,9 +1,11 @@
-import { useMemo } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useMemo, useState } from 'react';
+import { Animated, Easing, Platform, StyleSheet, Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import type { CheckOutcome } from '@/exercises/types';
-import { useTheme, type Theme } from '@/theme';
+import { resultColor, useTheme, type Theme } from '@/theme';
+
+import { useReduceMotion } from './useReduceMotion';
 
 type Props = {
   outcome: CheckOutcome;
@@ -17,13 +19,32 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
   const theme = useTheme();
   const styles = useMemo(() => makeStyles(theme), [theme]);
   const { result, correctForm } = outcome;
+  const accent = resultColor(theme.colors, result);
 
-  const accent =
-    result === 'correct'
-      ? theme.colors.success
-      : result === 'correct_missing_accent'
-        ? theme.colors.warning
-        : theme.colors.error;
+  // A short "pop" when the feedback appears (skipped when the user prefers reduced motion).
+  const reduceMotion = useReduceMotion();
+  const [appear] = useState(() => new Animated.Value(0));
+  useEffect(() => {
+    if (reduceMotion === undefined) return;
+    if (reduceMotion) {
+      appear.setValue(1);
+      return;
+    }
+    Animated.timing(appear, {
+      toValue: 1,
+      duration: 260,
+      easing: Easing.out(Easing.back(2)),
+      useNativeDriver: Platform.OS !== 'web',
+    }).start();
+  }, [appear, reduceMotion]);
+  const popStyle = {
+    opacity: appear.interpolate({
+      inputRange: [0, 0.4, 1],
+      outputRange: [0, 1, 1],
+      extrapolate: 'clamp',
+    }),
+    transform: [{ scale: appear.interpolate({ inputRange: [0, 1], outputRange: [0.92, 1] }) }],
+  };
   const title =
     result === 'correct'
       ? t('feedback.correct')
@@ -32,8 +53,8 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
         : t('feedback.wrong');
 
   return (
-    <View
-      style={[styles.banner, { borderLeftColor: accent }]}
+    <Animated.View
+      style={[styles.banner, { borderLeftColor: accent }, popStyle]}
       testID="feedback"
       accessibilityLiveRegion="polite"
       aria-live="polite"
@@ -58,7 +79,7 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
           {t('feedback.meaning', { translation })}
         </Text>
       )}
-    </View>
+    </Animated.View>
   );
 }
 
