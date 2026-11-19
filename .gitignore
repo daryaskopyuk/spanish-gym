@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# generated native folders (Continuous Native Generation)
+/ios
+/android
+
+# Native signing
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Metro
+.metro-health-check*
+
+# Tests
+coverage/
+e2e/screenshots/
+test-results/
+playwright-report/
+
+# Raw conjugation source data (large; see scripts/build-verbs/README.md)
+scripts/build-verbs/raw/
+
+# Claude Code personal overrides
+.claude/settings.local.json
+
+# misc
+.DS_Store
+npm-debug.*
+.env*.local
+*.tsbuildinfo

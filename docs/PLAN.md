@@ -8,7 +8,7 @@ This file is the source of truth for implementation. Work through it **one miles
 
 | Milestone | Status |
 |---|---|
-| M0 Setup + agent tooling | ⬜ not started |
+| M0 Setup + agent tooling | ✅ done (PR #1) |
 | M1 Quiz with sample data | ⬜ |
 | M2 Real data | ⬜ |
 | M3 Settings + rounds | ⬜ |

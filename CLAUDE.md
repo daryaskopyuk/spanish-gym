@@ -14,9 +14,12 @@ Mobile app (Expo / React Native, TypeScript) for practising Spanish verb conjuga
 npm run check        # typecheck + lint + unit/component tests. Run before saying you're done.
 npm run e2e          # web build + Playwright flow tests + screenshots in e2e/screenshots/
 npm test -- <path>   # run one test file
-npm run build:verbs  # regenerate src/data/verbs.json from raw data
+npm run build:verbs  # regenerate src/data/verbs.json from raw data (from M2)
 npm start            # Expo dev server (human scans QR with Expo Go)
+npm run web          # dev server in the browser
 ```
+
+Unit/component tests live in `tests/`, browser tests in `e2e/`. Add packages with `npx expo install <pkg>` (picks SDK-compatible versions), after asking per the working agreement. Expo changes between SDKs: check the docs for the SDK version in `package.json` (https://docs.expo.dev/versions/v58.0.0/) rather than relying on memory.
 
 After any UI change: run `npm run e2e` and **look at the screenshots** (light, dark, large font) before reporting done.
 
