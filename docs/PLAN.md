@@ -134,13 +134,15 @@ tests/
 
 Conjugation is a fixed, finite data set. 600 verbs × 15 tenses × 6 persons ≈ 54,000 short strings, about 1–2 MB of JSON. That's small enough to ship inside the app.
 
-Candidate sources (**check each license before use**):
+**Decided (research in `docs/data-source.md`):**
 
-- **Wiktionary data via kaikki.org**: large, includes irregulars. Wiktionary content is CC BY-SA (commercial use allowed with attribution + share-alike on the data). Leading candidate.
-- **Fred Jehle's Spanish verb database**: clean, ~600 common verbs, all tenses. Believed to be non-commercial only. Fine for cross-checking, risky to ship if the app is monetized.
-- An LLM may be used **at development time** to help write the build script or spot-check output. Never as the source of truth.
+- **Conjugations + definitions:** Wiktionary via kaikki.org, CC BY-SA 4.0 (commercial use allowed with attribution + share-alike on the data file). Spot check 42/42 correct.
+- **Frequency:** FrequencyWords es_50k (CC BY-SA 4.0), used only to draft the verb order.
+- **Verb list and short English translations are curated files**, drafted automatically and reviewed by a human. Draft list: `docs/research/candidate-verbs.tsv`.
+- **Fred Jehle's database is not shipped** (confirmed non-commercial license).
+- An LLM may help at development time (drafting translations, writing the script). Never as the source of truth.
 
-The About screen must credit the data source if the license requires it.
+The About screen credits Wiktionary/Wiktextract (and FrequencyWords if frequency data is shipped). `src/data/LICENSE-DATA.md` states that `verbs.json` is CC BY-SA 4.0.
 
 ### 4.2 Schema (`verbs.json`)
 
@@ -178,20 +180,22 @@ The About screen must credit the data source if the license requires it.
 - `Person` = `yo | tu | el | nosotros | vosotros | ellos`. Display labels ("él / ella / usted") live in i18n files, not the data.
 - `Tense` ids are stable strings (`present_indicative`, `preterite_indicative`, `imperfect_indicative`, `future_indicative`, `present_perfect`, `conditional`, `present_subjunctive`, later `imperative_affirmative`, `imperative_negative`). Never rename one once shipped, because progress data refers to it.
 - Within a tense, persons are **optional** (`Partial<Record<Person, Form>>`). The imperative has no *yo*. Generators and the scheduler must skip missing persons.
-- A form is `string | string[]` for real alternatives (e.g. imperfect subjunctive *-ra / -se*).
+- A form is `string | string[]` for real alternatives. The imperfect subjunctive is one tense id, `imperfect_subjunctive`, holding `[-ra, -se]` (both accepted; `-ra` shown first).
+- Each verb also stores its `participle` (needed to build compound tenses and for future exercises).
 - `translations` is keyed by language so Ukrainian (`"uk"`) can be added later. Falls back to `en`.
 - Reflexive forms include the pronoun in the stored string.
 
 ### 4.3 Build script
 
-`scripts/build-verbs` (Node + TypeScript):
+`scripts/build-verbs` (Node + TypeScript), two stages. Full design and the list of data quirks to handle: `docs/data-source.md` → "Build design for M2" and "Things the build script must handle".
 
-1. Read the raw source file (downloaded manually into `scripts/build-verbs/raw/`, not committed if large).
-2. Keep the top N verbs by frequency.
-3. Keep only the first short translation; merge in a hand-edited `translations-overrides.json` for the most common verbs.
-4. Output `src/data/verbs.json` matching the schema.
-5. Validate: every included tense has its expected persons; no empty strings.
-6. Spot-check test: a hand-written list of ~30 known forms (regular + irregular + reflexive + compound: *ser, ir, tener, hacer, decir, poder, querer, estar, dar, ver, levantarse, he hablado…*) must match.
+1. **`npm run fetch:verbs`** (rare, needs network): stream the kaikki Spanish verb dump (749 MB, never stored or committed), keep only verbs in `verb-list.json`, write a small committed `snapshot/` with source URL + date.
+2. **`npm run build:verbs`** (normal, offline, deterministic, runs in CI): snapshot + `verb-list.json` + `translations.en.json` → `src/data/verbs.json`.
+   - Exclude vos forms and reflexive forms embedded in non-reflexive tables.
+   - Derive reflexive verbs from their base verb (pronoun + form) for non-imperative tenses.
+   - Derive compound tenses from *haber* + participle (*haber* 3rd sg present = *ha*, not *hay*).
+3. Validate (build fails): every included tense has its expected persons; no empty strings; every listed verb exists in the snapshot and has a translation.
+4. Spot-check test (`spot-check.json`): ~40 known forms (regular, irregular, spelling-change, accent-shift, reflexive, compound, *-ra/-se*) must match. The 42 forms already verified in the research are a ready starting set.
 
 ---
 
@@ -424,8 +428,11 @@ Each milestone: work on a branch (`m1-quiz`, …), open a pull request, and fini
 - **Done when:** the practice loop passes component + e2e tests, screenshots (light, dark, large font) look right, and it works on the iPhone.
 
 ### M2: Real data
-- Build script from §4.3; generate ~300 verbs, present tense.
-- Spot-check tests pass. Attribution on the About screen.
+- Human reviews `docs/research/candidate-verbs.tsv` → `scripts/build-verbs/verb-list.json` (~300 verbs incl. common reflexive verbs). Can be done before M2 starts.
+- Draft `translations.en.json` (short glosses); human reviews.
+- Fetch + build scripts from §4.3; generate ~300 verbs, present tense (the script supports all simple tenses + compound from the start; only present is switched on in the app).
+- Spot-check tests pass. Attribution on the About screen; `src/data/LICENSE-DATA.md`.
+- The environment running M2 needs network access to `kaikki.org` (for fetch only).
 - **Done when:** the app uses generated data and the build script is repeatable.
 
 ### M3: Settings + rounds
@@ -468,7 +475,8 @@ Imperative (affirmative + negative), Ukrainian interface + translations, iOS App
 
 | Question | Decide before |
 |---|---|
-| Data source license confirmed (kaikki/Wiktionary vs other) | M2 |
+| ~~Data source license confirmed~~ → resolved: Wiktionary/kaikki (CC BY-SA 4.0), see `docs/data-source.md` | ✅ |
+| Final verb list (review `docs/research/candidate-verbs.tsv`) | M2 |
 | Default for "Show vosotros" (Spain vs Latin America focus) | M3 |
 | Crash reporting in the first release? Which vendor? | M6 |
 | App name (free in stores, not copying an existing brand) | M6 |
