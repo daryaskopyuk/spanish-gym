@@ -174,7 +174,6 @@ export default function PracticeScreen() {
         <View style={styles.after}>
           <FeedbackBanner
             outcome={outcome}
-            answer={answer}
             translation={settings.showTranslation === 'after' ? translation : undefined}
           />
           {tableForms && (

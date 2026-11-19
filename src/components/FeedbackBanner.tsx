@@ -9,12 +9,11 @@ import { useReduceMotion } from './useReduceMotion';
 
 type Props = {
   outcome: CheckOutcome;
-  answer: string;
   /** Shown when the translation setting is "after". */
   translation?: string;
 };
 
-export function FeedbackBanner({ outcome, answer, translation }: Props) {
+export function FeedbackBanner({ outcome, translation }: Props) {
   const { t } = useTranslation();
   const theme = useTheme();
   const styles = useMemo(() => makeStyles(theme), [theme]);
@@ -68,12 +67,8 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
         {title}
       </Text>
 
-      {result === 'wrong' && (
-        <>
-          <Text style={styles.body}>{t('feedback.yourAnswer', { answer: answer.trim() })}</Text>
-          <Text style={styles.body}>{t('feedback.correctAnswer')}</Text>
-        </>
-      )}
+      {/* The user's answer stays visible in the (locked) answer box, so it isn't repeated here. */}
+      {result === 'wrong' && <Text style={styles.body}>{t('feedback.correctAnswer')}</Text>}
       {result !== 'correct' && (
         <Text style={styles.correctForm} testID="correct-form">
           {correctForm}
