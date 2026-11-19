@@ -5,5 +5,47 @@
   "home": {
     "subtitle": "Practise Spanish verb conjugation",
     "start": "Start"
+  },
+  "practice": {
+    "title": "Practice",
+    "answerLabel": "Your answer",
+    "answerPlaceholder": "Type the verb form",
+    "accentKeyLabel": "Insert {{char}}",
+    "check": "Check",
+    "next": "Next",
+    "showAllForms": "Show all forms",
+    "hideAllForms": "Hide all forms",
+    "noQuestions": "There are no verbs to practise yet."
+  },
+  "feedback": {
+    "correct": "Correct!",
+    "missingAccent": "Correct, but watch the accent:",
+    "wrong": "Not quite.",
+    "yourAnswer": "Your answer: {{answer}}",
+    "correctAnswer": "Correct answer:",
+    "meaning": "Meaning: {{translation}}"
+  },
+  "conjugationTable": {
+    "label": "All forms of {{verb}}, {{tense}}"
+  },
+  "tenses": {
+    "present_indicative": "Present",
+    "preterite_indicative": "Preterite",
+    "imperfect_indicative": "Imperfect",
+    "future_indicative": "Future",
+    "present_perfect": "Present perfect",
+    "conditional": "Conditional",
+    "present_subjunctive": "Present subjunctive",
+    "imperfect_subjunctive": "Imperfect subjunctive",
+    "imperative_affirmative": "Imperative",
+    "imperative_negative": "Negative imperative"
+  },
+  "persons": {
+    "yo": "yo",
+    "tu": "tú",
+    "el": "él / ella / usted",
+    "nosotros": "nosotros / nosotras",
+    "vosotros": "vosotros / vosotras",
+    "ellos": "ellos / ellas / ustedes"
   }
 }

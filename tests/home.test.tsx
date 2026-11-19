@@ -1,8 +1,11 @@
 import '@/i18n';
 
-import { render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import HomeScreen from '../app/index';
+
+const mockPush = jest.fn();
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }) }));
 
 jest.mock('react-native-safe-area-context', () => {
   const { View } = jest.requireActual('react-native');
@@ -14,5 +17,11 @@ describe('HomeScreen', () => {
     await render(<HomeScreen />);
     expect(screen.getByTestId('home-title')).toHaveTextContent('Spanish Gym');
     expect(screen.getByRole('button', { name: 'Start' })).toBeOnTheScreen();
+  });
+
+  it('Start opens the practice screen', async () => {
+    await render(<HomeScreen />);
+    await fireEvent.press(screen.getByTestId('start-button'));
+    expect(mockPush).toHaveBeenCalledWith('/practice');
   });
 });

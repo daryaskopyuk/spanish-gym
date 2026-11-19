@@ -1,5 +1,351 @@
 {
   "version": 1,
-  "source": "placeholder (M0): replaced by sample data in M1 and generated data in M2",
-  "verbs": []
+  "source": "Hand-written sample data (M1). Replaced by generated Wiktionary data in M2.",
+  "verbs": [
+    {
+      "infinitive": "hacer",
+      "translations": {
+        "en": "to do, to make"
+      },
+      "frequencyRank": 1,
+      "regular": false,
+      "reflexive": false,
+      "participle": "hecho",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "hago",
+          "tu": "haces",
+          "el": "hace",
+          "nosotros": "hacemos",
+          "vosotros": "hacéis",
+          "ellos": "hacen"
+        }
+      }
+    },
+    {
+      "infinitive": "ser",
+      "translations": {
+        "en": "to be"
+      },
+      "frequencyRank": 2,
+      "regular": false,
+      "reflexive": false,
+      "participle": "sido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "soy",
+          "tu": "eres",
+          "el": "es",
+          "nosotros": "somos",
+          "vosotros": "sois",
+          "ellos": "son"
+        }
+      }
+    },
+    {
+      "infinitive": "decir",
+      "translations": {
+        "en": "to say, to tell"
+      },
+      "frequencyRank": 3,
+      "regular": false,
+      "reflexive": false,
+      "participle": "dicho",
+      "tags": [
+        "ir"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "digo",
+          "tu": "dices",
+          "el": "dice",
+          "nosotros": "decimos",
+          "vosotros": "decís",
+          "ellos": "dicen"
+        }
+      }
+    },
+    {
+      "infinitive": "ver",
+      "translations": {
+        "en": "to see"
+      },
+      "frequencyRank": 4,
+      "regular": false,
+      "reflexive": false,
+      "participle": "visto",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "veo",
+          "tu": "ves",
+          "el": "ve",
+          "nosotros": "vemos",
+          "vosotros": "veis",
+          "ellos": "ven"
+        }
+      }
+    },
+    {
+      "infinitive": "estar",
+      "translations": {
+        "en": "to be (state, location)"
+      },
+      "frequencyRank": 5,
+      "regular": false,
+      "reflexive": false,
+      "participle": "estado",
+      "tags": [
+        "ar"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "estoy",
+          "tu": "estás",
+          "el": "está",
+          "nosotros": "estamos",
+          "vosotros": "estáis",
+          "ellos": "están"
+        }
+      }
+    },
+    {
+      "infinitive": "ir",
+      "translations": {
+        "en": "to go"
+      },
+      "frequencyRank": 6,
+      "regular": false,
+      "reflexive": false,
+      "participle": "ido",
+      "tags": [
+        "ir"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "voy",
+          "tu": "vas",
+          "el": "va",
+          "nosotros": "vamos",
+          "vosotros": "vais",
+          "ellos": "van"
+        }
+      }
+    },
+    {
+      "infinitive": "hablar",
+      "translations": {
+        "en": "to speak, to talk"
+      },
+      "frequencyRank": 7,
+      "regular": true,
+      "reflexive": false,
+      "participle": "hablado",
+      "tags": [
+        "ar"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "hablo",
+          "tu": "hablas",
+          "el": "habla",
+          "nosotros": "hablamos",
+          "vosotros": "habláis",
+          "ellos": "hablan"
+        }
+      }
+    },
+    {
+      "infinitive": "tener",
+      "translations": {
+        "en": "to have"
+      },
+      "frequencyRank": 8,
+      "regular": false,
+      "reflexive": false,
+      "participle": "tenido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "tengo",
+          "tu": "tienes",
+          "el": "tiene",
+          "nosotros": "tenemos",
+          "vosotros": "tenéis",
+          "ellos": "tienen"
+        }
+      }
+    },
+    {
+      "infinitive": "saber",
+      "translations": {
+        "en": "to know (a fact)"
+      },
+      "frequencyRank": 13,
+      "regular": false,
+      "reflexive": false,
+      "participle": "sabido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "sé",
+          "tu": "sabes",
+          "el": "sabe",
+          "nosotros": "sabemos",
+          "vosotros": "sabéis",
+          "ellos": "saben"
+        }
+      }
+    },
+    {
+      "infinitive": "llamarse",
+      "translations": {
+        "en": "to be called"
+      },
+      "frequencyRank": 25,
+      "regular": true,
+      "reflexive": true,
+      "participle": "llamado",
+      "tags": [
+        "ar"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "me llamo",
+          "tu": "te llamas",
+          "el": "se llama",
+          "nosotros": "nos llamamos",
+          "vosotros": "os llamáis",
+          "ellos": "se llaman"
+        }
+      }
+    },
+    {
+      "infinitive": "poder",
+      "translations": {
+        "en": "to be able to, can"
+      },
+      "frequencyRank": 28,
+      "regular": false,
+      "reflexive": false,
+      "participle": "podido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "puedo",
+          "tu": "puedes",
+          "el": "puede",
+          "nosotros": "podemos",
+          "vosotros": "podéis",
+          "ellos": "pueden"
+        }
+      }
+    },
+    {
+      "infinitive": "vivir",
+      "translations": {
+        "en": "to live"
+      },
+      "frequencyRank": 32,
+      "regular": true,
+      "reflexive": false,
+      "participle": "vivido",
+      "tags": [
+        "ir"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "vivo",
+          "tu": "vives",
+          "el": "vive",
+          "nosotros": "vivimos",
+          "vosotros": "vivís",
+          "ellos": "viven"
+        }
+      }
+    },
+    {
+      "infinitive": "comer",
+      "translations": {
+        "en": "to eat"
+      },
+      "frequencyRank": 35,
+      "regular": true,
+      "reflexive": false,
+      "participle": "comido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "como",
+          "tu": "comes",
+          "el": "come",
+          "nosotros": "comemos",
+          "vosotros": "coméis",
+          "ellos": "comen"
+        }
+      }
+    },
+    {
+      "infinitive": "querer",
+      "translations": {
+        "en": "to want, to love"
+      },
+      "frequencyRank": 49,
+      "regular": false,
+      "reflexive": false,
+      "participle": "querido",
+      "tags": [
+        "er"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "quiero",
+          "tu": "quieres",
+          "el": "quiere",
+          "nosotros": "queremos",
+          "vosotros": "queréis",
+          "ellos": "quieren"
+        }
+      }
+    },
+    {
+      "infinitive": "levantarse",
+      "translations": {
+        "en": "to get up"
+      },
+      "frequencyRank": 220,
+      "regular": true,
+      "reflexive": true,
+      "participle": "levantado",
+      "tags": [
+        "ar"
+      ],
+      "forms": {
+        "present_indicative": {
+          "yo": "me levanto",
+          "tu": "te levantas",
+          "el": "se levanta",
+          "nosotros": "nos levantamos",
+          "vosotros": "os levantáis",
+          "ellos": "se levantan"
+        }
+      }
+    }
+  ]
 }

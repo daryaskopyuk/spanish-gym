@@ -9,7 +9,7 @@ This file is the source of truth for implementation. Work through it **one miles
 | Milestone | Status |
 |---|---|
 | M0 Setup + agent tooling | ✅ done (PR #1) |
-| M1 Quiz with sample data | ⬜ |
+| M1 Quiz with sample data | ✅ done (PR #3) |
 | M2 Real data | ⬜ |
 | M3 Settings + rounds | ⬜ |
 | M4 Progress + scheduling | ⬜ |
@@ -239,6 +239,7 @@ interface Exercise<Q, A> {
    - correct → green, translation (if setting = after)
    - correct with missing accent → green/amber, accented form highlighted
    - wrong → red, user's answer + correct form, translation, **"Show all forms"** button revealing `ConjugationTable` for that verb + tense
+   - every result (correct, missing accent, wrong) has the collapsed **"Show all forms"** button
 5. "Next" button. No auto-advance.
 
 ---

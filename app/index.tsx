@@ -1,13 +1,16 @@
+import { useRouter } from 'expo-router';
 import { useMemo } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 
+import { Button } from '@/components/Button';
 import { useTheme, type Theme } from '@/theme';
 
-// Home screen. M0: title + a Start button placeholder. Tense chips and modes come later.
+// Home screen. Tense chips, modes and stats come in M4.
 export default function HomeScreen() {
   const { t } = useTranslation();
+  const router = useRouter();
   const theme = useTheme();
   const styles = useMemo(() => makeStyles(theme), [theme]);
 
@@ -18,13 +21,13 @@ export default function HomeScreen() {
           {t('app.title')}
         </Text>
         <Text style={styles.subtitle}>{t('home.subtitle')}</Text>
-        <Pressable
-          style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-          accessibilityRole="button"
-          testID="start-button"
-        >
-          <Text style={styles.buttonText}>{t('home.start')}</Text>
-        </Pressable>
+        <View style={styles.start}>
+          <Button
+            label={t('home.start')}
+            onPress={() => router.push('/practice')}
+            testID="start-button"
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -41,14 +44,6 @@ function makeStyles({ colors, spacing, fontSize }: Theme) {
     },
     title: { fontSize: fontSize.xl, fontWeight: '700', color: colors.text },
     subtitle: { fontSize: fontSize.md, color: colors.textMuted },
-    button: {
-      marginTop: spacing.lg,
-      backgroundColor: colors.primary,
-      paddingVertical: spacing.md,
-      borderRadius: 12,
-      alignItems: 'center',
-    },
-    buttonPressed: { opacity: 0.8 },
-    buttonText: { fontSize: fontSize.md, fontWeight: '600', color: colors.onPrimary },
+    start: { marginTop: spacing.lg },
   });
 }
