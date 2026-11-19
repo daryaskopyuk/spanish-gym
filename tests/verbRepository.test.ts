@@ -11,8 +11,9 @@ import {
 import { formAlternatives } from '@/exercises/conjugationInput/checker';
 
 describe('verbRepository', () => {
-  it('loads the sample data', () => {
-    expect(getAllVerbs().length).toBeGreaterThanOrEqual(15);
+  it('loads the generated data', () => {
+    expect(getAllVerbs().length).toBeGreaterThanOrEqual(290);
+    expect(getDataSource()).toMatch(/Wiktionary/);
     expect(getDataSource()).toEqual(expect.any(String));
   });
 
@@ -21,20 +22,30 @@ describe('verbRepository', () => {
     expect(getVerb('no-such-verb')).toBeUndefined();
     expect(getForm('ser', 'present_indicative', 'yo')).toBe('soy');
     expect(getForm('levantarse', 'present_indicative', 'nosotros')).toBe('nos levantamos');
-    expect(getTenseForms('hablar', 'future_indicative')).toBeUndefined();
+    expect(getForm('hablar', 'future_indicative', 'yo')).toBe('hablaré');
+    expect(getTenseForms('hablar', 'conditional')).toBeUndefined();
   });
 
-  it('has the present tense, with all six persons and no empty forms, for every verb', () => {
-    expect(getAvailableTenses()).toContain('present_indicative');
+  const M2_TENSES = ['present_indicative', 'preterite_indicative', 'future_indicative'] as const;
+
+  it('has present, preterite and future with all six persons and no empty forms', () => {
+    expect(getAvailableTenses().sort()).toEqual([...M2_TENSES].sort());
     for (const verb of getAllVerbs()) {
-      const forms = verb.forms.present_indicative;
-      expect(forms).toBeDefined();
-      for (const person of PERSONS) {
-        const form = forms?.[person];
-        expect(form).toBeDefined();
-        for (const alt of formAlternatives(form ?? '')) expect(alt.trim()).not.toBe('');
+      for (const tense of M2_TENSES) {
+        const forms = verb.forms[tense];
+        expect(forms).toBeDefined();
+        for (const person of PERSONS) {
+          const form = forms?.[person];
+          expect(form).toBeDefined();
+          for (const alt of formAlternatives(form ?? '')) expect(alt.trim()).not.toBe('');
+        }
       }
     }
+  });
+
+  it('orders verbs by frequency rank, starting at 1', () => {
+    const ranks = getAllVerbs().map((v) => v.frequencyRank);
+    expect(ranks).toEqual(ranks.map((_, i) => i + 1));
   });
 
   it('includes the reflexive pronoun in reflexive forms', () => {
@@ -43,9 +54,11 @@ describe('verbRepository', () => {
     expect(reflexive.length).toBeGreaterThanOrEqual(2);
     for (const verb of reflexive) {
       for (const person of PERSONS) {
-        expect(getForm(verb.infinitive, 'present_indicative', person)).toMatch(
-          new RegExp(`^${pronouns[person]} `),
-        );
+        for (const tense of M2_TENSES) {
+          expect(getForm(verb.infinitive, tense, person)).toMatch(
+            new RegExp(`^${pronouns[person]} `),
+          );
+        }
       }
     }
   });

@@ -1,0 +1,464 @@
+[
+  {
+    "verb": "ser",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "soy"
+  },
+  {
+    "verb": "ser",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "fue"
+  },
+  {
+    "verb": "ser",
+    "tense": "imperfect_indicative",
+    "person": "nosotros",
+    "form": "éramos"
+  },
+  {
+    "verb": "ir",
+    "tense": "present_indicative",
+    "person": "vosotros",
+    "form": "vais"
+  },
+  {
+    "verb": "ir",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "fueron"
+  },
+  {
+    "verb": "ir",
+    "tense": "imperfect_indicative",
+    "person": "yo",
+    "form": "iba"
+  },
+  {
+    "verb": "estar",
+    "tense": "present_indicative",
+    "person": "tu",
+    "form": "estás"
+  },
+  {
+    "verb": "estar",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "estuve"
+  },
+  {
+    "verb": "tener",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "tengo"
+  },
+  {
+    "verb": "tener",
+    "tense": "future_indicative",
+    "person": "el",
+    "form": "tendrá"
+  },
+  {
+    "verb": "hacer",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "hizo"
+  },
+  {
+    "verb": "hacer",
+    "tense": "conditional",
+    "person": "yo",
+    "form": "haría"
+  },
+  {
+    "verb": "decir",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "digo"
+  },
+  {
+    "verb": "decir",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "dijeron"
+  },
+  {
+    "verb": "poder",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "pude"
+  },
+  {
+    "verb": "poder",
+    "tense": "present_indicative",
+    "person": "tu",
+    "form": "puedes"
+  },
+  {
+    "verb": "querer",
+    "tense": "future_indicative",
+    "person": "yo",
+    "form": "querré"
+  },
+  {
+    "verb": "saber",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "sé"
+  },
+  {
+    "verb": "saber",
+    "tense": "present_subjunctive",
+    "person": "el",
+    "form": "sepa"
+  },
+  {
+    "verb": "dar",
+    "tense": "present_subjunctive",
+    "person": "el",
+    "form": "dé"
+  },
+  {
+    "verb": "ver",
+    "tense": "imperfect_indicative",
+    "person": "yo",
+    "form": "veía"
+  },
+  {
+    "verb": "pensar",
+    "tense": "present_indicative",
+    "person": "ellos",
+    "form": "piensan"
+  },
+  {
+    "verb": "dormir",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "durmió"
+  },
+  {
+    "verb": "pedir",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "pido"
+  },
+  {
+    "verb": "enviar",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "envío"
+  },
+  {
+    "verb": "buscar",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "busqué"
+  },
+  {
+    "verb": "llegar",
+    "tense": "present_subjunctive",
+    "person": "yo",
+    "form": "llegue"
+  },
+  {
+    "verb": "coger",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "cojo"
+  },
+  {
+    "verb": "conocer",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "conozco"
+  },
+  {
+    "verb": "caer",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "caigo"
+  },
+  {
+    "verb": "oír",
+    "tense": "present_indicative",
+    "person": "el",
+    "form": "oye"
+  },
+  {
+    "verb": "leer",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "leyeron"
+  },
+  {
+    "verb": "reír",
+    "tense": "present_indicative",
+    "person": "nosotros",
+    "form": "reímos"
+  },
+  {
+    "verb": "hablar",
+    "tense": "imperfect_subjunctive",
+    "person": "yo",
+    "form": "hablara"
+  },
+  {
+    "verb": "hablar",
+    "tense": "imperfect_subjunctive",
+    "person": "yo",
+    "form": "hablase"
+  },
+  {
+    "verb": "vivir",
+    "tense": "present_indicative",
+    "person": "vosotros",
+    "form": "vivís"
+  },
+  {
+    "verb": "haber",
+    "tense": "present_indicative",
+    "person": "el",
+    "form": "ha"
+  },
+  {
+    "verb": "haber",
+    "tense": "present_indicative",
+    "person": "nosotros",
+    "form": "hemos"
+  },
+  {
+    "verb": "venir",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "vengo"
+  },
+  {
+    "verb": "poner",
+    "tense": "future_indicative",
+    "person": "nosotros",
+    "form": "pondremos"
+  },
+  {
+    "verb": "salir",
+    "tense": "conditional",
+    "person": "ellos",
+    "form": "saldrían"
+  },
+  {
+    "verb": "llamarse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me llamo"
+  },
+  {
+    "verb": "tener",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "tuvo"
+  },
+  {
+    "verb": "ir",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "fui"
+  },
+  {
+    "verb": "venir",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "vine"
+  },
+  {
+    "verb": "saber",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "supe"
+  },
+  {
+    "verb": "querer",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "quiso"
+  },
+  {
+    "verb": "traer",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "trajeron"
+  },
+  {
+    "verb": "conducir",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "conduje"
+  },
+  {
+    "verb": "poner",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "puso"
+  },
+  {
+    "verb": "dar",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "di"
+  },
+  {
+    "verb": "ver",
+    "tense": "preterite_indicative",
+    "person": "el",
+    "form": "vio"
+  },
+  {
+    "verb": "llegar",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "llegué"
+  },
+  {
+    "verb": "empezar",
+    "tense": "preterite_indicative",
+    "person": "yo",
+    "form": "empecé"
+  },
+  {
+    "verb": "pedir",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "pidieron"
+  },
+  {
+    "verb": "decir",
+    "tense": "future_indicative",
+    "person": "yo",
+    "form": "diré"
+  },
+  {
+    "verb": "hacer",
+    "tense": "future_indicative",
+    "person": "yo",
+    "form": "haré"
+  },
+  {
+    "verb": "poder",
+    "tense": "future_indicative",
+    "person": "yo",
+    "form": "podré"
+  },
+  {
+    "verb": "salir",
+    "tense": "future_indicative",
+    "person": "tu",
+    "form": "saldrás"
+  },
+  {
+    "verb": "estar",
+    "tense": "future_indicative",
+    "person": "vosotros",
+    "form": "estaréis"
+  },
+  {
+    "verb": "venir",
+    "tense": "future_indicative",
+    "person": "ellos",
+    "form": "vendrán"
+  },
+  {
+    "verb": "levantarse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me levanto"
+  },
+  {
+    "verb": "irse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me voy"
+  },
+  {
+    "verb": "sentarse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me siento"
+  },
+  {
+    "verb": "vestirse",
+    "tense": "present_indicative",
+    "person": "el",
+    "form": "se viste"
+  },
+  {
+    "verb": "acostarse",
+    "tense": "present_indicative",
+    "person": "tu",
+    "form": "te acuestas"
+  },
+  {
+    "verb": "divertirse",
+    "tense": "preterite_indicative",
+    "person": "ellos",
+    "form": "se divirtieron"
+  },
+  {
+    "verb": "quedarse",
+    "tense": "future_indicative",
+    "person": "nosotros",
+    "form": "nos quedaremos"
+  },
+  {
+    "verb": "hablar",
+    "tense": "present_perfect",
+    "person": "yo",
+    "form": "he hablado"
+  },
+  {
+    "verb": "hacer",
+    "tense": "present_perfect",
+    "person": "el",
+    "form": "ha hecho"
+  },
+  {
+    "verb": "volver",
+    "tense": "present_perfect",
+    "person": "ellos",
+    "form": "han vuelto"
+  },
+  {
+    "verb": "escribir",
+    "tense": "present_perfect",
+    "person": "tu",
+    "form": "has escrito"
+  },
+  {
+    "verb": "abrir",
+    "tense": "present_perfect",
+    "person": "vosotros",
+    "form": "habéis abierto"
+  },
+  {
+    "verb": "romper",
+    "tense": "present_perfect",
+    "person": "nosotros",
+    "form": "hemos roto"
+  },
+  {
+    "verb": "levantarse",
+    "tense": "present_perfect",
+    "person": "nosotros",
+    "form": "nos hemos levantado"
+  },
+  {
+    "verb": "despertarse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me despierto"
+  },
+  {
+    "verb": "acostarse",
+    "tense": "present_indicative",
+    "person": "yo",
+    "form": "me acuesto"
+  }
+]

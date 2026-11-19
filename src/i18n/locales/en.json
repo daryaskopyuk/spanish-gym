@@ -4,7 +4,8 @@
   },
   "home": {
     "subtitle": "Practise Spanish verb conjugation",
-    "start": "Start"
+    "start": "Start",
+    "about": "About"
   },
   "practice": {
     "title": "Practice",
@@ -47,5 +48,15 @@
     "nosotros": "nosotros / nosotras",
     "vosotros": "vosotros / vosotras",
     "ellos": "ellos / ellas / ustedes"
+  },
+  "about": {
+    "title": "About",
+    "version": "Version {{version}}",
+    "dataHeading": "Verb data",
+    "dataWiktionary": "Verb conjugations and definitions come from Wiktionary (wiktionary.org), licensed under CC BY-SA 4.0, extracted with Wiktextract / kaikki.org by Tatu Ylonen.",
+    "dataFrequency": "The order of verbs is based on FrequencyWords by Hermit Dave (derived from OpenSubtitles), licensed under CC BY-SA 4.0.",
+    "dataLicense": "The app's verb data file is shared under the same license, CC BY-SA 4.0.",
+    "openLicense": "Read the CC BY-SA 4.0 license",
+    "openWiktionary": "Visit Wiktionary"
   }
 }
