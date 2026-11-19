@@ -6,6 +6,7 @@ Mobile app (Expo / React Native, TypeScript) for practising Spanish verb conjuga
 
 - **Plan, milestones, current status:** `docs/PLAN.md` (read the Status table first)
 - **Decisions and reasons:** `docs/decisions.md`. Do not reverse a logged decision without asking.
+- **Ideas for later (not planned):** `docs/IDEAS.md`. Add new ideas there.
 - Screens: `app/` (Expo Router). Logic: `src/`. Data build script: `scripts/build-verbs/`. Browser UI tests: `e2e/`.
 
 ## Commands

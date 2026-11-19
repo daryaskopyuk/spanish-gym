@@ -483,6 +483,8 @@ Add the remaining tenses, in this order: imperfect → present perfect → condi
 ### Later (unordered)
 Imperative (affirmative + negative), Ukrainian interface + translations, iOS App Store release, multiple-choice exercise, sentence fill-in, irregular-only drills, timed mode, manual theme toggle, accounts + cloud sync, Pro unlock, ads.
 
+More ideas, with details, are collected in `docs/IDEAS.md`.
+
 ---
 
 ## 12. Privacy and store notes
