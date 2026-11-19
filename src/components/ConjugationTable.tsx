@@ -23,7 +23,7 @@ export function ConjugationTable({ infinitive, tense, forms, highlight }: Props)
 
   return (
     <View
-      style={styles.table}
+      style={[styles.table, theme.elevation.card]}
       testID="conjugation-table"
       accessibilityLabel={t('conjugationTable.label', {
         verb: infinitive,
@@ -36,7 +36,13 @@ export function ConjugationTable({ infinitive, tense, forms, highlight }: Props)
         return (
           <View
             key={person}
-            style={[styles.row, i > 0 && styles.divider, active && styles.activeRow]}
+            style={[
+              styles.row,
+              i > 0 && styles.divider,
+              i === 0 && styles.firstRow,
+              i === persons.length - 1 && styles.lastRow,
+              active && styles.activeRow,
+            ]}
             testID={`table-row-${person}`}
           >
             <Text style={[styles.person, active && styles.activeText]}>
@@ -55,10 +61,8 @@ export function ConjugationTable({ infinitive, tense, forms, highlight }: Props)
 function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
   return StyleSheet.create({
     table: {
-      borderWidth: 1,
-      borderColor: colors.border,
       borderRadius: radius.md,
-      overflow: 'hidden',
+      backgroundColor: colors.surface,
     },
     row: {
       flexDirection: 'row',
@@ -69,7 +73,10 @@ function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
       paddingHorizontal: spacing.md,
     },
     divider: { borderTopWidth: 1, borderTopColor: colors.border },
-    activeRow: { backgroundColor: colors.surface },
+    activeRow: { backgroundColor: colors.highlight },
+    // Rounded like the table, so a highlighted first/last row stays inside the corners.
+    firstRow: { borderTopLeftRadius: radius.md, borderTopRightRadius: radius.md },
+    lastRow: { borderBottomLeftRadius: radius.md, borderBottomRightRadius: radius.md },
     person: { flexShrink: 1, fontSize: fontSize.md, color: colors.textMuted },
     // marginLeft auto keeps the form right-aligned when a large font wraps it onto its own line.
     form: { marginLeft: 'auto', fontSize: fontSize.md, fontWeight: '600', color: colors.text },

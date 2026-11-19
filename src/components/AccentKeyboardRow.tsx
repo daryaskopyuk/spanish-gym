@@ -29,7 +29,8 @@ export function AccentKeyboardRow({ onInsert, disabled }: Props) {
           testID={`accent-key-${char}`}
           style={({ pressed }) => [
             styles.key,
-            pressed && styles.pressed,
+            theme.elevation.card,
+            pressed && !disabled && theme.elevation.pressed,
             disabled && styles.disabled,
           ]}
         >
@@ -49,13 +50,10 @@ function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
       flexBasis: 40,
       minHeight: minTouchSize,
       borderRadius: radius.md,
-      borderWidth: 1,
-      borderColor: colors.border,
       backgroundColor: colors.surface,
       alignItems: 'center',
       justifyContent: 'center',
     },
-    pressed: { opacity: 0.6 },
     disabled: { opacity: 0.4 },
     char: { fontSize: fontSize.lg, color: colors.text },
   });

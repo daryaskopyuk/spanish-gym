@@ -14,7 +14,7 @@ import {
 } from '@/exercises/conjugationInput';
 import type { CheckOutcome, ExerciseContext } from '@/exercises/types';
 import { useSettings, visiblePersons } from '@/settings/settingsStore';
-import { minTouchSize, useTheme, type Theme } from '@/theme';
+import { minTouchSize, resultColor, useTheme, type Theme } from '@/theme';
 
 // M1: present tense only. M4 adds the per-session tense selection (PLAN §7b).
 const SESSION_TENSES: readonly TenseId[] = ['present_indicative'];
@@ -43,6 +43,7 @@ export default function PracticeScreen() {
   const [answer, setAnswer] = useState('');
   const [outcome, setOutcome] = useState<CheckOutcome | undefined>();
   const [showTable, setShowTable] = useState(false);
+  const [focused, setFocused] = useState(false);
 
   // Cursor position, so the accent row inserts at the cursor rather than at the end.
   const inputRef = useRef<ComponentRef<typeof TextInput>>(null);
@@ -61,6 +62,19 @@ export default function PracticeScreen() {
       selectionRef.current = { start: cursor, end: cursor };
       setAnswer(next);
       setForcedSelection({ start: cursor, end: cursor });
+    },
+    [answer],
+  );
+
+  // Keep the cursor at the end while the user is appending, even if the platform doesn't
+  // report a selection change for every keystroke (or the text is pasted/autofilled).
+  const changeText = useCallback(
+    (text: string) => {
+      const { start, end } = selectionRef.current;
+      if (start === end && end === answer.length) {
+        selectionRef.current = { start: text.length, end: text.length };
+      }
+      setAnswer(text);
     },
     [answer],
   );
@@ -98,7 +112,7 @@ export default function PracticeScreen() {
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="handled"
     >
-      <View style={styles.prompt}>
+      <View style={[styles.prompt, theme.elevation.card]}>
         <Text style={styles.verb} testID="prompt-verb">
           {question.infinitive}
         </Text>
@@ -118,7 +132,7 @@ export default function PracticeScreen() {
       <TextInput
         ref={inputRef}
         value={answer}
-        onChangeText={setAnswer}
+        onChangeText={changeText}
         onSelectionChange={(e) => {
           selectionRef.current = e.nativeEvent.selection;
           if (forcedSelection) setForcedSelection(undefined);
@@ -136,7 +150,14 @@ export default function PracticeScreen() {
         placeholder={t('practice.answerPlaceholder')}
         placeholderTextColor={theme.colors.textMuted}
         accessibilityLabel={t('practice.answerLabel')}
-        style={[styles.input, checked && styles.inputChecked]}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        style={[
+          styles.input,
+          focused && !checked && styles.inputFocused,
+          // After checking, the answer box takes the result colour (green / amber / red).
+          checked && { borderColor: resultColor(theme.colors, outcome.result) },
+        ]}
         testID="answer-input"
       />
 
@@ -203,17 +224,21 @@ function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
     },
     pronoun: { fontSize: fontSize.lg, fontWeight: '600', color: colors.text },
     input: {
+      // Focus is shown with the border colour; hide the browser's default focus ring (web only).
+      // ("auto" would draw Chrome's ring regardless of width; solid + 0 draws nothing.)
+      outlineStyle: 'solid',
+      outlineWidth: 0,
       minHeight: minTouchSize + spacing.sm,
       paddingHorizontal: spacing.md,
       paddingVertical: spacing.sm,
       fontSize: fontSize.lg,
       color: colors.text,
-      backgroundColor: colors.background,
+      backgroundColor: colors.surface,
       borderWidth: 2,
       borderColor: colors.border,
       borderRadius: radius.md,
     },
-    inputChecked: { backgroundColor: colors.surface },
+    inputFocused: { borderColor: colors.primary },
     after: { gap: spacing.md },
   });
 }

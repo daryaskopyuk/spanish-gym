@@ -6,6 +6,8 @@ import type { Person } from '@/data/types';
 import { getVerb } from '@/data/verbRepository';
 import { generateQuestion, type ConjugationQuestion } from '@/exercises/conjugationInput/generator';
 
+import { lightColors } from '@/theme';
+
 import PracticeScreen from '../app/practice';
 
 jest.mock('@/exercises/conjugationInput/generator', () => ({
@@ -57,7 +59,7 @@ describe('PracticeScreen', () => {
   it('correct answer → green feedback with translation, and "Show all forms"', async () => {
     await render(<PracticeScreen />);
     await answerWith('habláis');
-    expect(screen.getByTestId('feedback-correct')).toHaveTextContent('Correct!');
+    expect(screen.getByTestId('feedback-correct')).toHaveTextContent(/Correct!/);
     expect(screen.getByTestId('translation')).toHaveTextContent(/to speak/);
     expect(screen.queryByTestId('correct-form')).toBeNull();
 
@@ -101,6 +103,16 @@ describe('PracticeScreen', () => {
     );
   });
 
+  it.each([
+    ['habláis', lightColors.success],
+    ['hablais', lightColors.warning],
+    ['hablo', lightColors.error],
+  ])('colours the answer box by result (%s)', async (typed, colour) => {
+    await render(<PracticeScreen />);
+    await answerWith(typed);
+    expect(screen.getByTestId('answer-input')).toHaveStyle({ borderColor: colour });
+  });
+
   it('requires the reflexive pronoun', async () => {
     mockGenerate.mockReset().mockReturnValue(question('levantarse', 'yo'));
     await render(<PracticeScreen />);
@@ -126,6 +138,24 @@ describe('PracticeScreen', () => {
     });
     await fireEvent.press(screen.getByTestId('accent-key-á'));
     expect(input).toHaveDisplayValue('habláis');
+  });
+
+  it('accent row appends at the end when no cursor position was reported', async () => {
+    await render(<PracticeScreen />);
+    const input = screen.getByTestId('answer-input');
+    await fireEvent.changeText(input, 'habl');
+    await fireEvent.press(screen.getByTestId('accent-key-á'));
+    expect(input).toHaveDisplayValue('hablá');
+  });
+
+  it('accent row inserts at the end after typing more letters', async () => {
+    await render(<PracticeScreen />);
+    const input = screen.getByTestId('answer-input');
+    await fireEvent.changeText(input, 'habl');
+    await fireEvent.press(screen.getByTestId('accent-key-á'));
+    await fireEvent.changeText(input, 'hablá' + 'is');
+    await fireEvent.press(screen.getByTestId('accent-key-ñ'));
+    expect(input).toHaveDisplayValue('habláisñ');
   });
 
   it('accent row replaces a selected range', async () => {

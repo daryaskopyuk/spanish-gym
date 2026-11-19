@@ -18,9 +18,9 @@
     "noQuestions": "There are no verbs to practise yet."
   },
   "feedback": {
-    "correct": "Correct!",
+    "correct": "✓ Correct!",
     "missingAccent": "Correct, but watch the accent:",
-    "wrong": "Not quite.",
+    "wrong": "✗ Not quite.",
     "yourAnswer": "Your answer: {{answer}}",
     "correctAnswer": "Correct answer:",
     "meaning": "Meaning: {{translation}}"
