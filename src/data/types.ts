@@ -12,10 +12,11 @@ export type TenseId =
   | 'present_perfect'
   | 'conditional'
   | 'present_subjunctive'
+  | 'imperfect_subjunctive'
   | 'imperative_affirmative'
   | 'imperative_negative';
 
-/** A form; an array when there are real alternatives (e.g. -ra / -se). */
+/** A form; an array when there are real alternatives (e.g. -ra / -se). The first is preferred. */
 export type Form = string | string[];
 
 /** Persons are optional: e.g. the imperative has no `yo`. */
@@ -28,6 +29,8 @@ export type Verb = {
   frequencyRank?: number;
   regular?: boolean;
   reflexive: boolean;
+  /** Past participle, e.g. "hablado" (used to build compound tenses). */
+  participle: string;
   tags?: string[];
   forms: Partial<Record<TenseId, TenseForms>>;
 };

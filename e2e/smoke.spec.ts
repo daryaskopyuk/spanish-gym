@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 import { darkColors, lightColors } from '../src/theme/colors';
+import { useFontScale } from './helpers';
 
 // Opens the home screen in light and dark mode and saves screenshots to e2e/screenshots/.
 // An agent must look at these after any UI change.
@@ -38,3 +39,10 @@ for (const [colorScheme, colors] of Object.entries(schemes)) {
     });
   });
 }
+
+test('home screen with a large system font', async ({ page }) => {
+  await useFontScale(page, 1.6);
+  await page.goto('/');
+  await expect(page.getByTestId('start-button')).toBeVisible();
+  await page.screenshot({ path: 'e2e/screenshots/home-large-font.png' });
+});
