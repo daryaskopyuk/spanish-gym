@@ -21,7 +21,8 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
   const { result, correctForm } = outcome;
   const accent = resultColor(theme.colors, result);
 
-  // A short "pop" when the feedback appears (skipped when the user prefers reduced motion).
+  // Feedback appears with a short animation matching the surface style: raised cards "pop"
+  // (slight overshoot), flat cards slide up. Skipped when the user prefers reduced motion.
   const reduceMotion = useReduceMotion();
   const [appear] = useState(() => new Animated.Value(0));
   useEffect(() => {
@@ -30,20 +31,24 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
       appear.setValue(1);
       return;
     }
+    const pop = theme.feedbackAppear === 'pop';
     Animated.timing(appear, {
       toValue: 1,
-      duration: 260,
-      easing: Easing.out(Easing.back(2)),
+      duration: pop ? 260 : 200,
+      easing: pop ? Easing.out(Easing.back(2)) : Easing.out(Easing.cubic),
       useNativeDriver: Platform.OS !== 'web',
     }).start();
-  }, [appear, reduceMotion]);
+  }, [appear, reduceMotion, theme.feedbackAppear]);
   const popStyle = {
     opacity: appear.interpolate({
       inputRange: [0, 0.4, 1],
       outputRange: [0, 1, 1],
       extrapolate: 'clamp',
     }),
-    transform: [{ scale: appear.interpolate({ inputRange: [0, 1], outputRange: [0.92, 1] }) }],
+    transform:
+      theme.feedbackAppear === 'pop'
+        ? [{ scale: appear.interpolate({ inputRange: [0, 1], outputRange: [0.92, 1] }) }]
+        : [{ translateY: appear.interpolate({ inputRange: [0, 1], outputRange: [8, 0] }) }],
   };
   const title =
     result === 'correct'
@@ -54,7 +59,7 @@ export function FeedbackBanner({ outcome, answer, translation }: Props) {
 
   return (
     <Animated.View
-      style={[styles.banner, { borderLeftColor: accent }, popStyle]}
+      style={[styles.banner, theme.elevation.card, { borderLeftColor: accent }, popStyle]}
       testID="feedback"
       accessibilityLiveRegion="polite"
       aria-live="polite"

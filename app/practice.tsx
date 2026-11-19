@@ -66,6 +66,19 @@ export default function PracticeScreen() {
     [answer],
   );
 
+  // Keep the cursor at the end while the user is appending, even if the platform doesn't
+  // report a selection change for every keystroke (or the text is pasted/autofilled).
+  const changeText = useCallback(
+    (text: string) => {
+      const { start, end } = selectionRef.current;
+      if (start === end && end === answer.length) {
+        selectionRef.current = { start: text.length, end: text.length };
+      }
+      setAnswer(text);
+    },
+    [answer],
+  );
+
   const check = useCallback(() => {
     if (!question || outcome || answer.trim() === '') return;
     setOutcome(exercise.check(question, answer));
@@ -99,7 +112,7 @@ export default function PracticeScreen() {
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="handled"
     >
-      <View style={styles.prompt}>
+      <View style={[styles.prompt, theme.elevation.card]}>
         <Text style={styles.verb} testID="prompt-verb">
           {question.infinitive}
         </Text>
@@ -119,7 +132,7 @@ export default function PracticeScreen() {
       <TextInput
         ref={inputRef}
         value={answer}
-        onChangeText={setAnswer}
+        onChangeText={changeText}
         onSelectionChange={(e) => {
           selectionRef.current = e.nativeEvent.selection;
           if (forcedSelection) setForcedSelection(undefined);
@@ -142,7 +155,6 @@ export default function PracticeScreen() {
         style={[
           styles.input,
           focused && !checked && styles.inputFocused,
-          checked && styles.inputChecked,
           // After checking, the answer box takes the result colour (green / amber / red).
           checked && { borderColor: resultColor(theme.colors, outcome.result) },
         ]}
@@ -221,13 +233,12 @@ function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
       paddingVertical: spacing.sm,
       fontSize: fontSize.lg,
       color: colors.text,
-      backgroundColor: colors.background,
+      backgroundColor: colors.surface,
       borderWidth: 2,
       borderColor: colors.border,
       borderRadius: radius.md,
     },
     inputFocused: { borderColor: colors.primary },
-    inputChecked: { backgroundColor: colors.surface },
     after: { gap: spacing.md },
   });
 }

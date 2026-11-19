@@ -67,6 +67,15 @@ for (const variant of VARIANTS) {
   });
 }
 
+test('accent row appends after filled-in text', async ({ page }) => {
+  await page.goto('/');
+  await page.getByTestId('start-button').click();
+  const input = page.getByTestId('answer-input');
+  await input.fill('habl');
+  await page.getByTestId('accent-key-á').click();
+  await expect(input).toHaveValue('hablá');
+});
+
 test('accent row inserts at the cursor', async ({ page }) => {
   await page.goto('/');
   await page.getByTestId('start-button').click();

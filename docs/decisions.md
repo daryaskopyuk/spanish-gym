@@ -52,3 +52,4 @@ One entry per decision: what was decided and why. Newest at the bottom. Agents m
 | 2026-11-19 | Visual theme "Olive grove": olive green on cream (light), olive/lime on warm charcoal (dark); all text pairs ≥ 4.5:1 contrast | Chosen by the owner from three green options rendered on the real app; blue/white felt too plain. |
 | 2026-11-19 | Correct-answer feedback is visual only: the feedback card pops in, the answer box takes the result colour, and titles carry ✓ / ✗. No vibration for now | Owner preference. ✓ / ✗ also mean the result doesn't rely on colour alone. The pop is skipped when the phone's "Reduce Motion" setting is on. |
 | 2026-11-19 | Custom fonts and the splash / loading screen postponed | Owner preference; revisit later (splash is still the Expo template placeholder). |
+| 2026-11-19 | Light theme: beige page background, white elements on top (cards, input, keys, table) | Owner feedback: more depth and contrast between page and content. |

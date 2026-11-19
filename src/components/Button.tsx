@@ -25,8 +25,12 @@ export function Button({ label, onPress, variant = 'primary', disabled, testID }
       testID={testID}
       style={({ pressed }) => [
         styles.base,
-        primary ? styles.primary : styles.secondary,
-        pressed && styles.pressed,
+        primary
+          ? [styles.primary, theme.elevation.primary]
+          : [styles.secondary, theme.elevation.card],
+        pressed &&
+          !disabled &&
+          (primary ? theme.elevation.primaryPressed : theme.elevation.pressed),
         disabled && styles.disabled,
       ]}
     >
@@ -48,8 +52,7 @@ function makeStyles({ colors, spacing, fontSize, radius }: Theme) {
       justifyContent: 'center',
     },
     primary: { backgroundColor: colors.primary },
-    secondary: { borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface },
-    pressed: { opacity: 0.8 },
+    secondary: { backgroundColor: colors.surface },
     disabled: { opacity: 0.4 },
     label: { fontSize: fontSize.md, fontWeight: '600', textAlign: 'center' },
     primaryLabel: { color: colors.onPrimary },

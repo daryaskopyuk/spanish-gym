@@ -140,6 +140,24 @@ describe('PracticeScreen', () => {
     expect(input).toHaveDisplayValue('habláis');
   });
 
+  it('accent row appends at the end when no cursor position was reported', async () => {
+    await render(<PracticeScreen />);
+    const input = screen.getByTestId('answer-input');
+    await fireEvent.changeText(input, 'habl');
+    await fireEvent.press(screen.getByTestId('accent-key-á'));
+    expect(input).toHaveDisplayValue('hablá');
+  });
+
+  it('accent row inserts at the end after typing more letters', async () => {
+    await render(<PracticeScreen />);
+    const input = screen.getByTestId('answer-input');
+    await fireEvent.changeText(input, 'habl');
+    await fireEvent.press(screen.getByTestId('accent-key-á'));
+    await fireEvent.changeText(input, 'hablá' + 'is');
+    await fireEvent.press(screen.getByTestId('accent-key-ñ'));
+    expect(input).toHaveDisplayValue('habláisñ');
+  });
+
   it('accent row replaces a selected range', async () => {
     await render(<PracticeScreen />);
     const input = screen.getByTestId('answer-input');
